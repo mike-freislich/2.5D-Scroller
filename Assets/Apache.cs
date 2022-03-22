@@ -37,7 +37,7 @@ public class Apache : MonoBehaviour
 
         float delta = Time.deltaTime;                
         transform.Translate(moveSpeed.x * inputX * delta, moveSpeed.y * inputY * delta, 0, Space.World);
-        transform.Translate(2 * delta, 0, 0, Space.World);
+        //transform.Translate(2 * delta, 0, 0, Space.World);
         //transform.rotation =  Quaternion.Euler(-90 , 180 + inputX * -20, -90);
     }
 
