@@ -1,0 +1,376 @@
+fileFormatVersion: 2
+guid: dc065c0e1767d2442ab10297267aa95b
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: BushBig
+    100002: BushSmall
+    100004: CloudBig
+    100006: CloudSmall
+    100008: Cookie
+    100010: Dirt_Large
+    100012: Dirt_Medium
+    100014: DirtPiece
+    100016: ExclamationPoint
+    100018: Grass_Long
+    100020: Grass_Medium
+    100022: HIlls_1
+    100024: Hills_2
+    100026: Hills_3
+    100028: Mountain_1
+    100030: Mountain_2
+    100032: Mountain_3
+    100034: PineTree
+    100036: Platform_Island
+    100038: Platform_Long
+    100040: Platform_Medium
+    100042: //RootNode
+    100044: Rock
+    100046: ShootingTrap
+    100048: SmashingTower
+    100050: Smoke
+    100052: SpikeBall
+    100054: Star
+    100056: Tree_1
+    100058: Tree_2
+    100060: Water
+    100062: WoodBarrier_Large
+    100064: WoodBarrier_Medium
+    100066: WoodenBridge
+    100068: WoodenSlice
+    100070: WoodSign
+    100072: WoodSign_Two
+    400000: BushBig
+    400002: BushSmall
+    400004: CloudBig
+    400006: CloudSmall
+    400008: Cookie
+    400010: Dirt_Large
+    400012: Dirt_Medium
+    400014: DirtPiece
+    400016: ExclamationPoint
+    400018: Grass_Long
+    400020: Grass_Medium
+    400022: HIlls_1
+    400024: Hills_2
+    400026: Hills_3
+    400028: Mountain_1
+    400030: Mountain_2
+    400032: Mountain_3
+    400034: PineTree
+    400036: Platform_Island
+    400038: Platform_Long
+    400040: Platform_Medium
+    400042: //RootNode
+    400044: Rock
+    400046: ShootingTrap
+    400048: SmashingTower
+    400050: Smoke
+    400052: SpikeBall
+    400054: Star
+    400056: Tree_1
+    400058: Tree_2
+    400060: Water
+    400062: WoodBarrier_Large
+    400064: WoodBarrier_Medium
+    400066: WoodenBridge
+    400068: WoodenSlice
+    400070: WoodSign
+    400072: WoodSign_Two
+    2100000: Leaves
+    2100002: Red
+    2100004: Grass
+    2100006: Wood
+    2100008: Dirt
+    2100010: Water
+    2100012: Mountain
+    2100014: White
+    2100016: Yellow
+    2100018: Clouds
+    2100020: Smoke
+    2100022: Rock
+    2100024: Stone
+    2100026: Metal
+    2100028: ShinyMetal
+    2100030: Cookie
+    2100032: LightWood
+    2300000: BushBig
+    2300002: BushSmall
+    2300004: CloudBig
+    2300006: CloudSmall
+    2300008: Cookie
+    2300010: Dirt_Large
+    2300012: Dirt_Medium
+    2300014: DirtPiece
+    2300016: ExclamationPoint
+    2300018: Grass_Long
+    2300020: Grass_Medium
+    2300022: HIlls_1
+    2300024: Hills_2
+    2300026: Hills_3
+    2300028: Mountain_1
+    2300030: Mountain_2
+    2300032: Mountain_3
+    2300034: PineTree
+    2300036: Platform_Island
+    2300038: Platform_Long
+    2300040: Platform_Medium
+    2300042: Rock
+    2300044: ShootingTrap
+    2300046: SmashingTower
+    2300048: Smoke
+    2300050: SpikeBall
+    2300052: Star
+    2300054: Tree_1
+    2300056: Tree_2
+    2300058: Water
+    2300060: WoodBarrier_Large
+    2300062: WoodBarrier_Medium
+    2300064: WoodenBridge
+    2300066: WoodenSlice
+    2300068: WoodSign
+    2300070: WoodSign_Two
+    3300000: BushBig
+    3300002: BushSmall
+    3300004: CloudBig
+    3300006: CloudSmall
+    3300008: Cookie
+    3300010: Dirt_Large
+    3300012: Dirt_Medium
+    3300014: DirtPiece
+    3300016: ExclamationPoint
+    3300018: Grass_Long
+    3300020: Grass_Medium
+    3300022: HIlls_1
+    3300024: Hills_2
+    3300026: Hills_3
+    3300028: Mountain_1
+    3300030: Mountain_2
+    3300032: Mountain_3
+    3300034: PineTree
+    3300036: Platform_Island
+    3300038: Platform_Long
+    3300040: Platform_Medium
+    3300042: Rock
+    3300044: ShootingTrap
+    3300046: SmashingTower
+    3300048: Smoke
+    3300050: SpikeBall
+    3300052: Star
+    3300054: Tree_1
+    3300056: Tree_2
+    3300058: Water
+    3300060: WoodBarrier_Large
+    3300062: WoodBarrier_Medium
+    3300064: WoodenBridge
+    3300066: WoodenSlice
+    3300068: WoodSign
+    3300070: WoodSign_Two
+    4300000: BushBig
+    4300002: Hills_2
+    4300004: Hills_3
+    4300006: Tree_1
+    4300008: BushSmall
+    4300010: PineTree
+    4300012: HIlls_1
+    4300014: Water
+    4300016: Mountain_1
+    4300018: Mountain_2
+    4300020: Mountain_3
+    4300022: Tree_2
+    4300024: ExclamationPoint
+    4300026: Star
+    4300028: CloudBig
+    4300030: CloudSmall
+    4300032: Smoke
+    4300034: Dirt_Large
+    4300036: Dirt_Medium
+    4300038: Grass_Long
+    4300040: Grass_Medium
+    4300042: Platform_Long
+    4300044: DirtPiece
+    4300046: Platform_Medium
+    4300048: Platform_Island
+    4300050: ShootingTrap
+    4300052: SpikeBall
+    4300054: SmashingTower
+    4300056: Cookie
+    4300058: WoodSign_Two
+    4300060: WoodBarrier_Large
+    4300062: WoodBarrier_Medium
+    4300064: WoodSign
+    4300066: WoodenBridge
+    4300068: WoodenSlice
+    4300070: Rock
+    2186277476908879412: ImportLogs
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Clouds
+    second: {fileID: 2100000, guid: dbd54675b1b9f2c4ebafa8d33d8ebfe4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Cookie
+    second: {fileID: 2100000, guid: eefdefd310015484c9ba380624223155, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Dirt
+    second: {fileID: 2100000, guid: e6c12af681a8cc2449f2eef7a106a781, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Grass
+    second: {fileID: 2100000, guid: b1de26d9b711e0e4d90e902c7a64a883, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Leaves
+    second: {fileID: 2100000, guid: 6a726050357c26e448e13986abe094a3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: LightWood
+    second: {fileID: 2100000, guid: bd7b86ca4109b7340986d9b0f7243e9c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Metal
+    second: {fileID: 2100000, guid: 4c209ba1d1e799a4c80628d48a7ccaf8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mountain
+    second: {fileID: 2100000, guid: 01dc8983ff6307b41a5e4531f69f1955, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Red
+    second: {fileID: 2100000, guid: 43931426a7ca21641bcf2340c663c511, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Rock
+    second: {fileID: 2100000, guid: 8680ab4dec92ede40acdb40814b270c3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ShinyMetal
+    second: {fileID: 2100000, guid: b47152ff9fee29447bddd29ef88a7602, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Smoke
+    second: {fileID: 2100000, guid: b1426766d0c2bcc47bb5f9f0267f9ab8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Stone
+    second: {fileID: 2100000, guid: 97155584ca13ecf4f87cd5a691cfccae, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Water
+    second: {fileID: 2100000, guid: 4d506163ffdf2a647bd5abc697bc4375, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: White
+    second: {fileID: 2100000, guid: 96c6c98a3e71dfa48b2b0a6fdd734543, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wood
+    second: {fileID: 2100000, guid: 5748d86fc0c9a5a4e8cf766a16ae76f7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Yellow
+    second: {fileID: 2100000, guid: f75c2a6da43edba40a0d7d99f28431f0, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 1
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
