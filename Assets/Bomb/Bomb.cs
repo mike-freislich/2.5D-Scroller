@@ -15,7 +15,8 @@ public class Bomb : MonoBehaviour
 
     void Start()
     {
-
+        Rigidbody rb = GetComponent<Rigidbody>();
+        rb.velocity = new Vector3(2,-2,0);
     }
 
     void Update()
@@ -36,7 +37,7 @@ public class Bomb : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.layer == 7)
-        {            
+        {                        
             GameObject explodeObject = Instantiate<GameObject>(explosion, transform.position, transform.rotation);
             Destroy(gameObject);
             Destroy(explodeObject, 2);

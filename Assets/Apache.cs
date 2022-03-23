@@ -6,6 +6,9 @@ public class Apache : MonoBehaviour
 {
     public GameObject bomb;
     public GameObject bullet;
+
+    public SpawnPoint frontSpawnPoint;
+    public SpawnPoint bombSpawnPoint;
     
 
     public float rotorSpeed;
@@ -36,9 +39,8 @@ public class Apache : MonoBehaviour
         if (fire2) CheckBombDrop();
 
         float delta = Time.deltaTime;                
-        transform.Translate(moveSpeed.x * inputX * delta, moveSpeed.y * inputY * delta, 0, Space.World);
-        //transform.Translate(2 * delta, 0, 0, Space.World);
-        //transform.rotation =  Quaternion.Euler(-90 , 180 + inputX * -20, -90);
+        transform.Translate(moveSpeed.x * inputX * delta, moveSpeed.y * inputY * delta, 0, Space.World);       
+        //transform.rotation =  Quaternion.Euler(-90 , 180 + inputX * -20, -90); // TODO: figure out rotate on move
     }
 
     void AnimateRotors()
@@ -53,7 +55,8 @@ public class Apache : MonoBehaviour
         if (bombTimer > fireSpeed)
         {
             bombTimer = 0;
-            Instantiate<GameObject>(bomb, transform.position, transform.rotation);
+            bombSpawnPoint.Spawn();
+            //Instantiate<GameObject>(bomb, transform.position, transform.rotation);
         }
     }
 
@@ -61,7 +64,14 @@ public class Apache : MonoBehaviour
         bulletTimer += Time.deltaTime;
         if (bulletTimer > fireSpeed) {
             bulletTimer = 0;
-            Instantiate<GameObject>(bullet, transform.position, transform.rotation);
+            frontSpawnPoint.Spawn();
+            //Instantiate<GameObject>(bullet, transform.position, transform.rotation);
+        }
+    }
+
+    void OnTriggerEnter(Collider other) {
+        if (other.gameObject.layer == 7) { // Platforms
+            Debug.Log("platform crash!");
         }
     }
 }

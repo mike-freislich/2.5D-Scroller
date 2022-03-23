@@ -7,9 +7,9 @@ public class application : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //Application.targetFrameRate = 60;
+        Application.targetFrameRate = 24;
         //QualitySettings.vSyncCount = 1;
-        //QualitySettings.SetQualityLevel(4);
+        //QualitySettings.SetQualityLevel(0);
         
     }
 

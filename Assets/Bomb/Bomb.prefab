@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5375242830856961931}
   - component: {fileID: 5375242830856961928}
   - component: {fileID: 6372624399883235097}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Bomb
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5375242830856961929}
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -21.96, y: 14.09, z: -27.2}
+  m_LocalPosition: {x: -0.13586473, y: 14.333958, z: -26.771526}
   m_LocalScale: {x: 0.20919602, y: 0.2515373, z: 0.20919602}
   m_Children: []
   m_Father: {fileID: 0}
@@ -128,5 +128,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion: {fileID: 2392344449861076881, guid: 099d5b63d7ae14b53802b32e52e567d2, type: 3}
   accelerationDelay: 0.5
-  acceleration: 0.5
+  acceleration: 0.4
   maxVelocity: 4
