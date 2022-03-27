@@ -21,26 +21,36 @@ public class Apache : MonoBehaviour
     float bombTimer;
     float bulletTimer;
 
+    public float dodgeCycleTime;
+    float dodgeTimer;    
+
+    //GameObject parent;
+
     void Start()
     {
-        rotors = transform.Find("main Rotor Housing/Main Rotors");
-        tailRotors = transform.Find("tail rotor housing/tail rotor spindle");
+        //parent = GameObject.Find("Player");                
+        rotors = transform.Find("Apache/main Rotor Housing/Main Rotors");
+        tailRotors = transform.Find("Apache/tail rotor housing/tail rotor spindle");
     }
 
     void Update()
-    {
+    {   
         float inputX = Input.GetAxis("Horizontal");
         float inputY = Input.GetAxis("Vertical");
         bool fire1 = Input.GetButton("Fire1");
         bool fire2 = Input.GetButton("Fire2");
+        //bool dodge = Input.GetKeyDown(" ");
+
+
         
         AnimateRotors();
         if (fire1) CheckShoot();
         if (fire2) CheckBombDrop();
+        //if (dodge) CheckDodge();
 
         float delta = Time.deltaTime;                
         transform.Translate(moveSpeed.x * inputX * delta, moveSpeed.y * inputY * delta, 0, Space.World);       
-        //transform.rotation =  Quaternion.Euler(-90 , 180 + inputX * -20, -90); // TODO: figure out rotate on move
+        transform.rotation =  Quaternion.Euler(0, 0, inputX * -3);
     }
 
     void AnimateRotors()
@@ -55,8 +65,7 @@ public class Apache : MonoBehaviour
         if (bombTimer > fireSpeed)
         {
             bombTimer = 0;
-            bombSpawnPoint.Spawn();
-            //Instantiate<GameObject>(bomb, transform.position, transform.rotation);
+            bombSpawnPoint.Spawn();    
         }
     }
 
@@ -65,7 +74,16 @@ public class Apache : MonoBehaviour
         if (bulletTimer > fireSpeed) {
             bulletTimer = 0;
             frontSpawnPoint.Spawn();
-            //Instantiate<GameObject>(bullet, transform.position, transform.rotation);
+        }
+    }
+
+    void CheckDodge() {
+        dodgeTimer += Time.deltaTime;
+
+        if (dodgeTimer < dodgeCycleTime) {            
+            transform.rotation =  Quaternion.Euler(360 * dodgeCycleTime * Time.deltaTime, 0, 0);
+        } else {
+            transform.rotation =  Quaternion.Euler(0, 0, 0);
         }
     }
 
