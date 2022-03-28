@@ -14,6 +14,10 @@
 # They also could contain extremely sensitive data
 /[Mm]emoryCaptures/
 
+# ios & tvOS build directories
+/ios
+/tvOS
+
 # Recordings can get excessive in size
 /[Rr]ecordings/
 
