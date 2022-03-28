@@ -8,6 +8,8 @@ public class Bullet : MonoBehaviour
 
     public float speed = 3.0f;
 
+    public int damageAmount = 50;
+
     void Start()
     {
 
@@ -24,10 +26,18 @@ public class Bullet : MonoBehaviour
             case 7: Explode(); break; 
             case 9:
                 Explode();
-                Enemy enemy = other.GetComponent<Enemy>();
-                enemy.TakeDamage(50);
+                Enemy enemy = getTopLevelEnemy(other.gameObject);
+                if (enemy != null) enemy.TakeDamage(damageAmount);
                 break; 
         }
+    }
+
+    Enemy getTopLevelEnemy(GameObject hitObject)
+    {
+        Enemy enemy = hitObject.GetComponent<Enemy>();        
+        if (enemy == null)
+            enemy = hitObject.GetComponentInParent<Enemy>();        
+        return enemy;
     }
 
     void Explode()

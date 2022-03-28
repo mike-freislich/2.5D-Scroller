@@ -4,17 +4,14 @@ using UnityEngine;
 
 public class Turret : MonoBehaviour
 {
-
     Animator animator;
     Transform playerTransform;  
-
     Vector3 playerSize;
 
     void Start()
     {
-        animator = GetComponent<Animator>();
-        GameObject player = GameObject.Find("Player");         
-        playerTransform = player.transform;
+        animator = GetComponent<Animator>();        
+        playerTransform = GameObject.Find("Player").transform;
         playerSize = GameObject.Find("Player/Apache").GetComponent<MeshRenderer>().bounds.size;
     }
 

@@ -386,7 +386,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8112932670699689177}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 2.9509356, y: 0.58168554, z: 1}
@@ -402,6 +402,7 @@ GameObject:
   - component: {fileID: 9182400423998141205}
   - component: {fileID: -4892603694360272607}
   - component: {fileID: 8888000574972996818}
+  - component: {fileID: -2941665798783668538}
   m_Layer: 9
   m_Name: Turret
   m_TagString: Untagged
@@ -457,6 +458,20 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &-2941665798783668538
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8369271565920922031}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 277ed3d30f6b748398a3c29cbf75be10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 250
+  explosion: {fileID: 2392344449861076881, guid: 099d5b63d7ae14b53802b32e52e567d2, type: 3}
 --- !u!1 &9104883796729485360
 GameObject:
   m_ObjectHideFlags: 0
