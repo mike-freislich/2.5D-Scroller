@@ -10,9 +10,10 @@ public class Bomb : MonoBehaviour
     public float maxVelocity = 1.0f;
     float speed = 0;
     float delayTimer = 0;
+    int damageAmount = 100;
 
     void Start()
-    {
+    {    
         Rigidbody rb = GetComponent<Rigidbody>();
         rb.velocity = new Vector3(2, -2, 0);
     }
@@ -37,12 +38,21 @@ public class Bomb : MonoBehaviour
         switch (other.gameObject.layer)
         {
             case 7: Explode(); break;
-            case 9: 
-                Enemy enemy = other.GetComponent<Enemy>();
-                enemy.TakeDamage(100);
+            case 9:
+                Enemy enemy = getTopLevelEnemy(other.gameObject);
+                if (enemy != null)
+                    enemy.TakeDamage(damageAmount);
                 Explode();
                 break;
         }
+    }
+
+    Enemy getTopLevelEnemy(GameObject hitObject)
+    {
+        Enemy enemy = hitObject.GetComponent<Enemy>();        
+        if (enemy == null)
+            enemy = hitObject.GetComponentInParent<Enemy>();        
+        return enemy;
     }
 
     void Explode()
@@ -51,4 +61,5 @@ public class Bomb : MonoBehaviour
         Destroy(gameObject);
         Destroy(explodeObject, 2);
     }
+
 }
