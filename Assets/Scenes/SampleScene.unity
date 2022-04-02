@@ -123,6 +123,56 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &13148337
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 13148339}
+  - component: {fileID: 13148338}
+  m_Layer: 9
+  m_Name: chopperSpawn (9)
+  m_TagString: Untagged
+  m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &13148338
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 13148337}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d53b28059bf524bf0a29dad875d64867, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemy: {fileID: 4906543851158757278, guid: 4551077d5465f4c238533bcedfec126f, type: 3}
+  pathCreatorPrefab: {fileID: 2867231080888500679, guid: e27e7e6ca2c7247c4b86a971b1383bd5, type: 3}
+  attachToCamera: {fileID: 963194227}
+  pathSpeed: 8
+  numberToSpawn: 5
+  spawnDelay: 1.2
+  endOfPathInstruction: 2
+--- !u!4 &13148339
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 13148337}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 303.31, y: 15.860001, z: -27.2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 13
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &16969760
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -349,6 +399,56 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 9172552085598890540, guid: 076b70b813db97b4c9561a6c654bb906, type: 3}
   m_PrefabInstance: {fileID: 35020730}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &40919614
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 40919616}
+  - component: {fileID: 40919615}
+  m_Layer: 9
+  m_Name: chopperSpawn (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &40919615
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 40919614}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d53b28059bf524bf0a29dad875d64867, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemy: {fileID: 4906543851158757278, guid: 4551077d5465f4c238533bcedfec126f, type: 3}
+  pathCreatorPrefab: {fileID: 2867231080888500679, guid: eb8ca3d12b55e4318bc51f472287535c, type: 3}
+  attachToCamera: {fileID: 963194227}
+  pathSpeed: 10
+  numberToSpawn: 10
+  spawnDelay: 1
+  endOfPathInstruction: 2
+--- !u!4 &40919616
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 40919614}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 78.16, y: 13.46, z: -27.2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &45549046
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -378,7 +478,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5378616939189457337, guid: faf6de2158b63d5488431fcbf53c4ba7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -11.6705475
+      value: -12.7
       objectReference: {fileID: 0}
     - target: {fileID: 5378616939189457337, guid: faf6de2158b63d5488431fcbf53c4ba7, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1093,6 +1193,56 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c3f5aa8131a984b83a0c185b33697351, type: 3}
+--- !u!1 &223974226
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 223974228}
+  - component: {fileID: 223974227}
+  m_Layer: 9
+  m_Name: chopperSpawn (3)
+  m_TagString: Untagged
+  m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &223974227
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 223974226}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d53b28059bf524bf0a29dad875d64867, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemy: {fileID: 4906543851158757278, guid: 4551077d5465f4c238533bcedfec126f, type: 3}
+  pathCreatorPrefab: {fileID: 2867231080888500679, guid: e27e7e6ca2c7247c4b86a971b1383bd5, type: 3}
+  attachToCamera: {fileID: 963194227}
+  pathSpeed: 12
+  numberToSpawn: 20
+  spawnDelay: 0.7
+  endOfPathInstruction: 2
+--- !u!4 &223974228
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 223974226}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 126.89, y: 13.13, z: -27.2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &225398837 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9132689058443989545, guid: 2bdcde0c056a39d429187ddb23d0a9c2, type: 3}
@@ -1868,6 +2018,56 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5378616939189457337, guid: faf6de2158b63d5488431fcbf53c4ba7, type: 3}
   m_PrefabInstance: {fileID: 316489209}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &343512159
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 343512161}
+  - component: {fileID: 343512160}
+  m_Layer: 9
+  m_Name: chopperSpawn (6)
+  m_TagString: Untagged
+  m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &343512160
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 343512159}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d53b28059bf524bf0a29dad875d64867, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemy: {fileID: 4906543851158757278, guid: 4551077d5465f4c238533bcedfec126f, type: 3}
+  pathCreatorPrefab: {fileID: 2867231080888500679, guid: eb8ca3d12b55e4318bc51f472287535c, type: 3}
+  attachToCamera: {fileID: 963194227}
+  pathSpeed: 10
+  numberToSpawn: 10
+  spawnDelay: 1
+  endOfPathInstruction: 2
+--- !u!4 &343512161
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 343512159}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 210.03, y: 12.3, z: -27.2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &361006639
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1952,6 +2152,56 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 8.876259, y: 5.999021, z: 30.576696}
   m_Center: {x: -0.086718105, y: 2.9913414, z: -0.049508106}
+--- !u!1 &382398193
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 382398195}
+  - component: {fileID: 382398194}
+  m_Layer: 9
+  m_Name: chopperSpawn (5)
+  m_TagString: Untagged
+  m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &382398194
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 382398193}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d53b28059bf524bf0a29dad875d64867, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemy: {fileID: 4906543851158757278, guid: 4551077d5465f4c238533bcedfec126f, type: 3}
+  pathCreatorPrefab: {fileID: 2867231080888500679, guid: e27e7e6ca2c7247c4b86a971b1383bd5, type: 3}
+  attachToCamera: {fileID: 963194227}
+  pathSpeed: 8
+  numberToSpawn: 5
+  spawnDelay: 1.2
+  endOfPathInstruction: 2
+--- !u!4 &382398195
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 382398193}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 167.95001, y: 15.860001, z: -27.2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &391107781 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 709883890528751437, guid: 5abc7dd331a79452aafb083e67f12b37, type: 3}
@@ -2105,6 +2355,56 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5565553661945996343, guid: 8d40967b29d17b24a9368d5f336ba0a8, type: 3}
   m_PrefabInstance: {fileID: 434319026}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &464850115
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 464850117}
+  - component: {fileID: 464850116}
+  m_Layer: 9
+  m_Name: chopperSpawn (8)
+  m_TagString: Untagged
+  m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &464850116
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 464850115}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d53b28059bf524bf0a29dad875d64867, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemy: {fileID: 4906543851158757278, guid: 4551077d5465f4c238533bcedfec126f, type: 3}
+  pathCreatorPrefab: {fileID: 2867231080888500679, guid: eb8ca3d12b55e4318bc51f472287535c, type: 3}
+  attachToCamera: {fileID: 963194227}
+  pathSpeed: 5
+  numberToSpawn: 5
+  spawnDelay: 2
+  endOfPathInstruction: 2
+--- !u!4 &464850117
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 464850115}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 283.44, y: 9.76, z: -27.2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &499699040
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2508,6 +2808,56 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c3f5aa8131a984b83a0c185b33697351, type: 3}
+--- !u!1 &596011423
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 596011425}
+  - component: {fileID: 596011424}
+  m_Layer: 9
+  m_Name: chopperSpawn (4)
+  m_TagString: Untagged
+  m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &596011424
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 596011423}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d53b28059bf524bf0a29dad875d64867, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemy: {fileID: 4906543851158757278, guid: 4551077d5465f4c238533bcedfec126f, type: 3}
+  pathCreatorPrefab: {fileID: 2867231080888500679, guid: eb8ca3d12b55e4318bc51f472287535c, type: 3}
+  attachToCamera: {fileID: 963194227}
+  pathSpeed: 5
+  numberToSpawn: 5
+  spawnDelay: 2
+  endOfPathInstruction: 2
+--- !u!4 &596011425
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 596011423}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 148.08, y: 9.76, z: -27.2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &638424321
 GameObject:
   m_ObjectHideFlags: 0
@@ -2663,7 +3013,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2653531212372608393, guid: fd0f2cae6076b75409a75d1c5a9521f3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -11.6705475
+      value: -11.2
       objectReference: {fileID: 0}
     - target: {fileID: 2653531212372608393, guid: fd0f2cae6076b75409a75d1c5a9521f3, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3944,6 +4294,56 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83cf7146a9ffa4f94afe022cba17c4b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &966519056
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 966519058}
+  - component: {fileID: 966519057}
+  m_Layer: 9
+  m_Name: chopperSpawn (11)
+  m_TagString: Untagged
+  m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &966519057
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 966519056}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d53b28059bf524bf0a29dad875d64867, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemy: {fileID: 4906543851158757278, guid: 4551077d5465f4c238533bcedfec126f, type: 3}
+  pathCreatorPrefab: {fileID: 2867231080888500679, guid: e27e7e6ca2c7247c4b86a971b1383bd5, type: 3}
+  attachToCamera: {fileID: 963194227}
+  pathSpeed: 12
+  numberToSpawn: 20
+  spawnDelay: 0.7
+  endOfPathInstruction: 2
+--- !u!4 &966519058
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 966519056}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 394.12, y: 11.97, z: -27.2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 15
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &971279361
 GameObject:
   m_ObjectHideFlags: 0
@@ -4343,7 +4743,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2653531212372608393, guid: fd0f2cae6076b75409a75d1c5a9521f3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -11.6705475
+      value: -12.4
       objectReference: {fileID: 0}
     - target: {fileID: 2653531212372608393, guid: fd0f2cae6076b75409a75d1c5a9521f3, type: 3}
       propertyPath: m_LocalPosition.z
@@ -5568,6 +5968,56 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5378616939189457337, guid: faf6de2158b63d5488431fcbf53c4ba7, type: 3}
   m_PrefabInstance: {fileID: 1337072615}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1350441915
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1350441917}
+  - component: {fileID: 1350441916}
+  m_Layer: 9
+  m_Name: chopperSpawn (7)
+  m_TagString: Untagged
+  m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1350441916
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1350441915}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d53b28059bf524bf0a29dad875d64867, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemy: {fileID: 4906543851158757278, guid: 4551077d5465f4c238533bcedfec126f, type: 3}
+  pathCreatorPrefab: {fileID: 2867231080888500679, guid: e27e7e6ca2c7247c4b86a971b1383bd5, type: 3}
+  attachToCamera: {fileID: 963194227}
+  pathSpeed: 12
+  numberToSpawn: 20
+  spawnDelay: 0.7
+  endOfPathInstruction: 2
+--- !u!4 &1350441917
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1350441915}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 258.76, y: 11.97, z: -27.2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1365864352
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6036,7 +6486,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2653531212372608393, guid: fd0f2cae6076b75409a75d1c5a9521f3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -11.6705475
+      value: -14
       objectReference: {fileID: 0}
     - target: {fileID: 2653531212372608393, guid: fd0f2cae6076b75409a75d1c5a9521f3, type: 3}
       propertyPath: m_LocalPosition.z
@@ -7138,6 +7588,56 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5565553661945996343, guid: 8d40967b29d17b24a9368d5f336ba0a8, type: 3}
   m_PrefabInstance: {fileID: 1725324898}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1752472867
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1752472869}
+  - component: {fileID: 1752472868}
+  m_Layer: 9
+  m_Name: chopperSpawn (10)
+  m_TagString: Untagged
+  m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1752472868
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1752472867}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d53b28059bf524bf0a29dad875d64867, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemy: {fileID: 4906543851158757278, guid: 4551077d5465f4c238533bcedfec126f, type: 3}
+  pathCreatorPrefab: {fileID: 2867231080888500679, guid: eb8ca3d12b55e4318bc51f472287535c, type: 3}
+  attachToCamera: {fileID: 963194227}
+  pathSpeed: 10
+  numberToSpawn: 10
+  spawnDelay: 1
+  endOfPathInstruction: 2
+--- !u!4 &1752472869
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1752472867}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 345.39, y: 12.3, z: -27.2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 14
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1770270618
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7898,7 +8398,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2653531212372608393, guid: fd0f2cae6076b75409a75d1c5a9521f3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -11.6705475
+      value: -15.6
       objectReference: {fileID: 0}
     - target: {fileID: 2653531212372608393, guid: fd0f2cae6076b75409a75d1c5a9521f3, type: 3}
       propertyPath: m_LocalPosition.z
