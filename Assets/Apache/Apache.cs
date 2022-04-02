@@ -41,8 +41,6 @@ public class Apache : MonoBehaviour
         bool fire2 = Input.GetButton("Fire2");
         //bool dodge = Input.GetKeyDown(" ");
 
-
-        
         AnimateRotors();
         if (fire1) CheckShoot();
         if (fire2) CheckBombDrop();

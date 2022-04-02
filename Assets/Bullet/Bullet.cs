@@ -6,7 +6,7 @@ public class Bullet : MonoBehaviour
 {
     public GameObject explosion;
 
-    public float speed = 3.0f;
+    public float speed = 300f;
 
     public int damageAmount = 50;
 
@@ -17,7 +17,11 @@ public class Bullet : MonoBehaviour
 
     void Update()
     {
-        transform.Translate(Vector3.right * speed, Space.World);
+        
+    }
+
+    void FixedUpdate() {
+        transform.Translate(Vector3.right * speed * Time.fixedDeltaTime, Space.World);
     }
 
     void OnTriggerEnter(Collider other)

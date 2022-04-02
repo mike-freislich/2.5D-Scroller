@@ -1,9 +1,29 @@
 fileFormatVersion: 2
-guid: fd2aa769a3d774c049dd30bd3dffc513
+guid: a97649baa65d2412faac9550742287fd
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Body
+    second: {fileID: 2100000, guid: 1d13b836ff45d4f789092bd0ca671123, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: metal
+    second: {fileID: 2100000, guid: 7d6ce61c287b94dcf934fb264ccf2ba5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: real glass
+    second: {fileID: 2100000, guid: 1d3620f1127234db889729afff2f0149, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: rotor Tip
+    second: {fileID: 2100000, guid: 3e1c18d96fbb9493ea27fc8a3a2a7c94, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -73,7 +93,7 @@ ModelImporter:
     blendShapeNormalImportMode: 1
     normalSmoothingSource: 0
   referencedClips: []
-  importAnimation: 0
+  importAnimation: 1
   humanDescription:
     serializedVersion: 3
     human: []

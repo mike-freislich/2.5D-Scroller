@@ -18,9 +18,9 @@ public class Bomb : MonoBehaviour
         rb.velocity = new Vector3(2, -2, 0);
     }
 
-    void Update()
+    void FixedUpdate()
     {
-        delayTimer += Time.deltaTime;
+        delayTimer += Time.fixedDeltaTime;
         if (delayTimer > accelerationDelay)
         {
             speed = Mathf.Min(speed + (acceleration * Time.deltaTime), maxVelocity);
