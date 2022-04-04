@@ -14,11 +14,9 @@ public class Enemy : MonoBehaviour
     void Update()
     {
     }
-
     
     void OnBecameInvisible()
     {
-        
         gameObject.SetActive(false);
         Destroy(gameObject);
     }

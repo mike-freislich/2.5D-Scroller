@@ -10,7 +10,6 @@ public class Apache : MonoBehaviour
     public SpawnPoint frontSpawnPoint;
     public SpawnPoint bombSpawnPoint;
     
-
     public float rotorSpeed;
     public Vector2 moveSpeed = new Vector2(5, 4);
 
@@ -22,7 +21,9 @@ public class Apache : MonoBehaviour
     float bulletTimer;
 
     public float dodgeCycleTime;
-    float dodgeTimer;    
+    float dodgeTimer;  
+
+    Transform groundLevel;  
 
     //GameObject parent;
 
@@ -31,6 +32,7 @@ public class Apache : MonoBehaviour
         //parent = GameObject.Find("Player");                
         rotors = transform.Find("Apache/main Rotor Housing/Main Rotors");
         tailRotors = transform.Find("Apache/tail rotor housing/tail rotor spindle");
+        groundLevel = GameObject.Find("GroundLevel").transform; 
     }
 
     void Update()
@@ -46,9 +48,30 @@ public class Apache : MonoBehaviour
         if (fire2) CheckBombDrop();
         //if (dodge) CheckDodge();
 
-        float delta = Time.deltaTime;                
-        transform.Translate(moveSpeed.x * inputX * delta, moveSpeed.y * inputY * delta, 0, Space.World);       
+        float delta = Time.deltaTime;        
+        transform.Translate(moveSpeed.x * inputX * delta, moveSpeed.y * inputY * delta, 0, Space.World);
         transform.rotation =  Quaternion.Euler(0, 0, inputX * -3);
+        CheckBounds();
+        
+    }
+
+    void CheckBounds()
+    {
+        Vector3 screenPos = Camera.main.WorldToViewportPoint(transform.position);
+        if (screenPos.x > 1) screenPos.x = 1;
+        else if (screenPos.x < 0) screenPos.x = 0;
+
+        if (screenPos.y < 0) screenPos.y = 0;
+        else if (screenPos.y > 1) screenPos.y = 1;
+    
+        transform.position = Camera.main.ViewportToWorldPoint(screenPos);
+        /*
+        Vector3 pos = transform.position;
+        if (transform.position.y < groundLevel.position.y) {
+            transform.position = new Vector3(pos.x, groundLevel.position.y, pos.z);
+            Debug.Log("player reached ground");
+        }
+        */
     }
 
     void AnimateRotors()
@@ -85,8 +108,11 @@ public class Apache : MonoBehaviour
         }
     }
 
-    void OnTriggerEnter(Collider other) {
-        if (other.gameObject.layer == 7) { // Platforms
+    void OnTriggerEnter(Collider other)
+    {   
+        Debug.Log("player collision");
+        // Platform Crash
+        if (other.gameObject.layer == 7) { 
             Debug.Log("platform crash!");
         }
     }
