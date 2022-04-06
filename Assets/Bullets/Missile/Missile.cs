@@ -5,6 +5,7 @@ using UnityEngine;
 public class Missile : MonoBehaviour
 {
     public float velocity;
+    public float spinSpeed;
 
     void Start()
     {
@@ -12,7 +13,8 @@ public class Missile : MonoBehaviour
 
     void Update()
     {
-        transform.Translate(Vector3.forward * velocity * Time.deltaTime);        
+        transform.Translate(Vector3.forward * velocity * Time.deltaTime);
+        transform.Rotate(Vector3.forward, Time.deltaTime * spinSpeed);       
     }
     void OnBecameInvisible()
     {        

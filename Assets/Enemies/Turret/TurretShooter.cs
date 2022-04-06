@@ -25,9 +25,12 @@ public class TurretShooter : MonoBehaviour
     {
         if (isOnCamera)
         {
-            shootTimer += Time.deltaTime;
-            if (shootTimer > shootDelay && !isMoving)
-                LaunchMissile();
+            if (!isMoving)
+            {
+                shootTimer += Time.deltaTime;
+                if (shootTimer > shootDelay)
+                    LaunchMissile();
+            }
         }
     }
 
@@ -45,7 +48,7 @@ public class TurretShooter : MonoBehaviour
         get
         {
             Vector3 screenPoint = Camera.main.WorldToViewportPoint(transform.position);
-            return screenPoint.x > 0 && screenPoint.x < 1 && screenPoint.y > 0 && screenPoint.y < 1; 
+            return screenPoint.x > 0 && screenPoint.x < 1 && screenPoint.y > 0 && screenPoint.y < 1;
         }
     }
 }

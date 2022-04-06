@@ -65,13 +65,15 @@ public class Apache : MonoBehaviour
         else if (screenPos.y > 1) screenPos.y = 1;
     
         transform.position = Camera.main.ViewportToWorldPoint(screenPos);
-        /*
-        Vector3 pos = transform.position;
-        if (transform.position.y < groundLevel.position.y) {
-            transform.position = new Vector3(pos.x, groundLevel.position.y, pos.z);
-            Debug.Log("player reached ground");
+
+        
+        Ray ray = new Ray(transform.position, Vector3.down);        
+        RaycastHit hit;
+        LayerMask layerMask = LayerMask.GetMask("Platforms");
+        if (Physics.Raycast(ray, out hit, 10f, layerMask)) {
+            Debug.Log($"Hit something {hit.collider.gameObject.layer}");
         }
-        */
+
     }
 
     void AnimateRotors()
@@ -111,6 +113,7 @@ public class Apache : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {   
         Debug.Log("player collision");
+
         // Platform Crash
         if (other.gameObject.layer == 7) { 
             Debug.Log("platform crash!");

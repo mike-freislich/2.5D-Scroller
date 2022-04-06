@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 5375242830856961940}
   - component: {fileID: 5375242830856961941}
   - component: {fileID: 5375242830856961930}
-  - component: {fileID: 5375242830856961931}
   - component: {fileID: 5375242830856961928}
   - component: {fileID: 6372624399883235097}
+  - component: {fileID: 2504952727079136315}
   m_Layer: 6
   m_Name: Bomb
   m_TagString: Untagged
@@ -29,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5375242830856961929}
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 77.54428, y: 6.973461, z: -27.010061}
+  m_LocalPosition: {x: -4.34956, y: 7.6139617, z: -27.187382}
   m_LocalScale: {x: 0.20919602, y: 0.2515373, z: 0.20919602}
   m_Children: []
   m_Father: {fileID: 0}
@@ -84,20 +84,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!136 &5375242830856961931
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5375242830856961929}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &5375242830856961928
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -130,3 +116,16 @@ MonoBehaviour:
   accelerationDelay: 0.5
   acceleration: 0.4
   maxVelocity: 4
+--- !u!65 &2504952727079136315
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5375242830856961929}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.0000002, y: 2.0000005, z: 3.3160598}
+  m_Center: {x: 0, y: 0, z: -0.005060223}
