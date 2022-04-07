@@ -25,7 +25,6 @@ public class Apache : MonoBehaviour
 
     Transform groundLevel;  
     LayerMask layerMask;
-//
     void Start()
     {
         layerMask = LayerMask.GetMask("Platforms");    
