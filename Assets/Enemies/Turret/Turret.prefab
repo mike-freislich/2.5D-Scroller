@@ -499,7 +499,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 250
-  explosion: {fileID: 2392344449861076881, guid: 099d5b63d7ae14b53802b32e52e567d2, type: 3}
+  explosion: {fileID: 8715917605851035263, guid: 4e9e1f4304d424aa39b01cb97d02e8dc, type: 3}
 --- !u!95 &8888000574972996818
 Animator:
   serializedVersion: 3
