@@ -24,12 +24,11 @@ public class Apache : MonoBehaviour
     float dodgeTimer;  
 
     Transform groundLevel;  
-
-    //GameObject parent;
-
+    LayerMask layerMask;
+//
     void Start()
     {
-        //parent = GameObject.Find("Player");                
+        layerMask = LayerMask.GetMask("Platforms");    
         rotors = transform.Find("Apache/main Rotor Housing/Main Rotors");
         tailRotors = transform.Find("Apache/tail rotor housing/tail rotor spindle");
         groundLevel = GameObject.Find("GroundLevel").transform; 
@@ -65,13 +64,14 @@ public class Apache : MonoBehaviour
         else if (screenPos.y > 1) screenPos.y = 1;
     
         transform.position = Camera.main.ViewportToWorldPoint(screenPos);
-
         
         Ray ray = new Ray(transform.position, Vector3.down);        
-        RaycastHit hit;
-        LayerMask layerMask = LayerMask.GetMask("Platforms");
-        if (Physics.Raycast(ray, out hit, 10f, layerMask)) {
-            Debug.Log($"Hit something {hit.collider.gameObject.layer}");
+        RaycastHit hit;        
+        if (Physics.Raycast(ray, out hit, 10f, layerMask)) {            
+            float y = 1.4f - hit.distance;
+            if (y > 0)
+                transform.Translate(new Vector3(0, y, 0));            
+            //Debug.Log($"Hit something at distance : {hit.distance}");
         }
 
     }
