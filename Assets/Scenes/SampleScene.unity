@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657838, g: 0.49641234, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657815, g: 0.49641192, b: 0.57481617, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -4085,16 +4085,32 @@ PrefabInstance:
       propertyPath: m_Name
       value: PowerUp
       objectReference: {fileID: 0}
+    - target: {fileID: 7770957575828833124, guid: e5735faffbbda425aba3592f67818059, type: 3}
+      propertyPath: color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7770957575828833124, guid: e5735faffbbda425aba3592f67818059, type: 3}
+      propertyPath: color.g
+      value: 0.2018975
+      objectReference: {fileID: 0}
+    - target: {fileID: 7770957575828833124, guid: e5735faffbbda425aba3592f67818059, type: 3}
+      propertyPath: color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7813344663827679804, guid: e5735faffbbda425aba3592f67818059, type: 3}
       propertyPath: m_Color.b
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7813344663827679804, guid: e5735faffbbda425aba3592f67818059, type: 3}
       propertyPath: m_Color.g
-      value: 0.48477888
+      value: 0.48627424
       objectReference: {fileID: 0}
     - target: {fileID: 7813344663827679804, guid: e5735faffbbda425aba3592f67818059, type: 3}
       propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7813344663827679804, guid: e5735faffbbda425aba3592f67818059, type: 3}
+      propertyPath: m_DrawHalo
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
