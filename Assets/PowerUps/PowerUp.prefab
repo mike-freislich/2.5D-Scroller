@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7779677474184319100}
   - component: {fileID: 7607183637860390385}
   - component: {fileID: 6128659045874488300}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Torus.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -91,7 +91,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3122874130531130982}
   - component: {fileID: 6966754029541655068}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Halo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -125,7 +125,7 @@ Light:
   m_Shape: 0
   m_Color: {r: 0, g: 0.7137255, b: 1, a: 1}
   m_Intensity: 0.5
-  m_Range: 10
+  m_Range: 8
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -184,7 +184,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2649249885012909343}
   - component: {fileID: 7770957575828833124}
-  m_Layer: 0
+  - component: {fileID: 3666603275421249656}
+  m_Layer: 10
   m_Name: PowerUp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -223,8 +224,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 087d8c597b7a843ad938455afe8d2258, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  color: {r: 0, g: 0.39954376, b: 1, a: 0}
   spin: {x: -40, y: 50, z: 35}
+  powerUpType: 3
+--- !u!135 &3666603275421249656
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3427193237733902245}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1.2806787
+  m_Center: {x: 0, y: 0.008439541, z: 0.0081682205}
 --- !u!1 &3584675842602051588
 GameObject:
   m_ObjectHideFlags: 0
@@ -236,7 +250,7 @@ GameObject:
   - component: {fileID: 5880773859547280585}
   - component: {fileID: 5851023248237636229}
   - component: {fileID: 1144457947909606461}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Torus.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -316,7 +330,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6402501815862205789}
   - component: {fileID: 7813344663827679804}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -410,7 +424,7 @@ GameObject:
   - component: {fileID: 6090422429563399186}
   - component: {fileID: 5247509232532310929}
   - component: {fileID: 8422350645537972110}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -491,7 +505,7 @@ GameObject:
   - component: {fileID: 7740588213995282609}
   - component: {fileID: 2078334803533836552}
   - component: {fileID: 5120618190713719869}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Torus
   m_TagString: Untagged
   m_Icon: {fileID: 0}

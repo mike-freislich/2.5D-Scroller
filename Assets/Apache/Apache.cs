@@ -6,10 +6,8 @@ public class Apache : MonoBehaviour
 {
     public GameObject bomb;
     public GameObject bullet;
-
     public SpawnPoint frontSpawnPoint;
     public SpawnPoint bombSpawnPoint;
-    
     public float rotorSpeed;
     public Vector2 moveSpeed = new Vector2(5, 4);
 
@@ -21,12 +19,15 @@ public class Apache : MonoBehaviour
     float bulletTimer;
 
     public float dodgeCycleTime;
-    float dodgeTimer;  
+    float dodgeTimer;
+
+    Shooter shooter;
 
     Transform groundLevel;  
     LayerMask layerMask;
     void Start()
     {
+        shooter = GetComponent<Shooter>();
         layerMask = LayerMask.GetMask("Platforms");    
         rotors = transform.Find("Apache/main Rotor Housing/Main Rotors");
         tailRotors = transform.Find("Apache/tail rotor housing/tail rotor spindle");
@@ -70,9 +71,7 @@ public class Apache : MonoBehaviour
             float y = 1.4f - hit.distance;
             if (y > 0)
                 transform.Translate(new Vector3(0, y, 0));            
-            //Debug.Log($"Hit something at distance : {hit.distance}");
         }
-
     }
 
     void AnimateRotors()
@@ -111,11 +110,27 @@ public class Apache : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {   
-        Debug.Log("player collision");
+        GameObject collidedWith = other.gameObject;
+        Debug.Log($"Collision {collidedWith.layer}");
 
-        // Platform Crash
-        if (other.gameObject.layer == 7) { 
-            Debug.Log("platform crash!");
-        }
+        switch (collidedWith.layer) {
+            
+            // platform
+            case 7: Debug.Log("platform crash!"); break;
+            
+            // Collidable
+            case 10: 
+                Debug.Log("POWER UP!");
+
+                // Power Up
+                PowerUp powerUp = collidedWith.GetComponent<PowerUp>();
+                if (powerUp != null) {
+                    shooter.powerUp(powerUp.powerUpType);
+                    Destroy(collidedWith);                                        
+                }
+                
+            break;
+
+        }     
     }
 }
