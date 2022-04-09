@@ -40,8 +40,7 @@ public class Bomb : MonoBehaviour
             case 7: Explode(); break;
             case 9:
                 Enemy enemy = getTopLevelEnemy(other.gameObject);
-                if (enemy != null)
-                    enemy.TakeDamage(damageAmount);
+                if (enemy != null) enemy.TakeDamage(damageAmount);
                 Explode();
                 break;
         }
