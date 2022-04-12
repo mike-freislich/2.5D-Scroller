@@ -38,7 +38,12 @@ public class PowerUp : MonoBehaviour
         transform.Rotate(spin * Time.deltaTime, Space.Self);
 
     }
-
+    
+    void OnBecameInvisible()
+    {        
+        Destroy(gameObject);
+    }
+    
     void OnTriggerEnter(Collider other)
     {
         Debug.Log("PowerUp collided");

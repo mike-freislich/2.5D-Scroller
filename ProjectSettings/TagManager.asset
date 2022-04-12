@@ -4,9 +4,15 @@
 TagManager:
   serializedVersion: 2
   tags:
+  - obstacle
+  - enemy
+  - player
+  - player bullet
+  - enemy bullet
+  - pickup
+  - Sheep
   - Trap
   - DeathZone
-  - Sheep
   layers:
   - Default
   - TransparentFX

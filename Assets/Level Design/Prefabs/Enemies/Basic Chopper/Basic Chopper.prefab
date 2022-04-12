@@ -110,7 +110,7 @@ GameObject:
   - component: {fileID: 2380494678315578296}
   m_Layer: 9
   m_Name: Basic Chopper
-  m_TagString: Untagged
+  m_TagString: enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

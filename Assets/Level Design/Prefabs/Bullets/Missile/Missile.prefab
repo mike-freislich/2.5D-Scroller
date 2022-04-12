@@ -312,12 +312,13 @@ GameObject:
   - component: {fileID: 558576387668337641}
   - component: {fileID: 2316117989213378339}
   - component: {fileID: -188980767501312849}
+  - component: {fileID: -863159683061845265}
   - component: {fileID: -2491990262830866035}
   - component: {fileID: 8902734083488987014}
   - component: {fileID: 671545033503738992}
   m_Layer: 9
   m_Name: Missile
-  m_TagString: Untagged
+  m_TagString: enemy bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -409,9 +410,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1477954289fc04dce9e4763230b29d70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  explosion: {fileID: 0}
   velocity: 10
   spinSpeed: 720
---- !u!114 &-2491990262830866035
+--- !u!114 &-863159683061845265
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -419,6 +421,22 @@ MonoBehaviour:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4261669110378346230}
   m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 287c21a657bc44e61b3fcd5eaf1a3614, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  explosion: {fileID: 2392344449861076881, guid: 099d5b63d7ae14b53802b32e52e567d2, type: 3}
+  positionOffset: {x: 0, y: 0, z: 0}
+  explosionTimeout: 2
+  health: 50
+--- !u!114 &-2491990262830866035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4261669110378346230}
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 277ed3d30f6b748398a3c29cbf75be10, type: 3}
   m_Name: 

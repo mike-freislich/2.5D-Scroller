@@ -14,7 +14,7 @@ public class application : MonoBehaviour
     {
         Application.targetFrameRate = 60;
         QualitySettings.vSyncCount = 1;
-        QualitySettings.SetQualityLevel((int)QualityLevel.Ultra);
+        QualitySettings.SetQualityLevel((int)QualityLevel.Medium);
         
     }
 
