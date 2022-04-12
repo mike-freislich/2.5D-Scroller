@@ -14,13 +14,7 @@ public class application : MonoBehaviour
     {
         Application.targetFrameRate = 60;
         QualitySettings.vSyncCount = 1;
-        QualitySettings.SetQualityLevel((int)QualityLevel.Medium);
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
+        QualitySettings.SetQualityLevel((int)QualityLevel.Ultra);
         
     }
 }

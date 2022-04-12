@@ -10,9 +10,6 @@ TagManager:
   - player bullet
   - enemy bullet
   - pickup
-  - Sheep
-  - Trap
-  - DeathZone
   layers:
   - Default
   - TransparentFX

@@ -29,6 +29,7 @@ public class Bullet : MonoBehaviour
         switch (other.gameObject.tag) {
             case "obstacle": Explode(); break; 
             case "enemy":
+            case "enemy bullet":
                 Explode();
                 Enemy enemy = getTopLevelEnemy(other.gameObject);
                 if (enemy != null) enemy.TakeDamage(damageAmount);
