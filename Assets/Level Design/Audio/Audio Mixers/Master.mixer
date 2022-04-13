@@ -44,6 +44,7 @@ AudioMixerGroupController:
   - {fileID: 243048389905312494}
   m_Volume: b5e6a386d8b0bab4cb5fde9c504046fe
   m_Pitch: 746ee1da483be094882670f57a1d5dcd
+  m_Send: 00000000000000000000000000000000
   m_Effects:
   - {fileID: 24400004}
   m_UserColorIndex: 0
@@ -77,8 +78,8 @@ AudioMixerSnapshotController:
     18d6ce50efe64014faefcfb8f70a8e74: 20
     80948573e7fe65f4c89a2e82f3e908ab: 4.648096
     b5e6a386d8b0bab4cb5fde9c504046fe: -10.34521
-    c332de39f8c468b4ea0cac497852a391: -19.928478
-    d1725c4d453a17f49986a3a08f8614a5: 20
+    c332de39f8c468b4ea0cac497852a391: -15
+    d1725c4d453a17f49986a3a08f8614a5: -13
     07d6c55fff3d3d14f968bfe3a3c8dc2e: -10.345207
   m_TransitionOverrides: {}
 --- !u!243 &243048389905312494
@@ -93,6 +94,7 @@ AudioMixerGroupController:
   m_Children: []
   m_Volume: c332de39f8c468b4ea0cac497852a391
   m_Pitch: f605e2b857826ec4dadae9fe1338d593
+  m_Send: 00000000000000000000000000000000
   m_Effects:
   - {fileID: 244233333764905214}
   m_UserColorIndex: 0
@@ -111,6 +113,7 @@ AudioMixerGroupController:
   m_Children: []
   m_Volume: 18d6ce50efe64014faefcfb8f70a8e74
   m_Pitch: 765ee13ca82d67941b028b5df9c0f361
+  m_Send: 00000000000000000000000000000000
   m_Effects:
   - {fileID: 244797788332792802}
   m_UserColorIndex: 0
@@ -129,6 +132,7 @@ AudioMixerGroupController:
   m_Children: []
   m_Volume: 07d6c55fff3d3d14f968bfe3a3c8dc2e
   m_Pitch: f4e1109228b9e914b9e3ba8280b58934
+  m_Send: 00000000000000000000000000000000
   m_Effects:
   - {fileID: 244100158527460808}
   m_UserColorIndex: 0
@@ -147,6 +151,7 @@ AudioMixerGroupController:
   m_Children: []
   m_Volume: d1725c4d453a17f49986a3a08f8614a5
   m_Pitch: 1065f9102883cc04e98b86eaf4702705
+  m_Send: 00000000000000000000000000000000
   m_Effects:
   - {fileID: 244613383913939434}
   m_UserColorIndex: 0
@@ -165,6 +170,7 @@ AudioMixerGroupController:
   m_Children: []
   m_Volume: 80948573e7fe65f4c89a2e82f3e908ab
   m_Pitch: 83a10d4bfcb1dad4ab8361b39fa66b1d
+  m_Send: 00000000000000000000000000000000
   m_Effects:
   - {fileID: 244744661564442816}
   m_UserColorIndex: 0
