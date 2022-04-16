@@ -92,6 +92,10 @@ PrefabInstance:
       value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 100012, guid: 29f96d9f927cf864db7fdfb707b89203, type: 3}
+      propertyPath: m_Name
+      value: propeller
+      objectReference: {fileID: 0}
+    - target: {fileID: 100012, guid: 29f96d9f927cf864db7fdfb707b89203, type: 3}
       propertyPath: m_Layer
       value: 9
       objectReference: {fileID: 0}

@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Spitfire : MonoBehaviour
 {
-
     public float speed;
     public float loopDelay;
     public float rollDelay;
@@ -13,38 +12,45 @@ public class Spitfire : MonoBehaviour
     Enemy enemy;
     Animator animator;
 
+    Transform propeller;
+
     void Start()
     {
         enemy = GetComponent<Enemy>();
-        animator = GetComponent<Animator>();        
+        animator = GetComponent<Animator>();
+        propeller = transform.Find("propeller");       
     }
 
     void Update()
     {
         if (!moving && enemy != null && enemy.isOnCamera) StartMove();
 
-        if (moving)
+        if (moving) {
             transform.Translate(Vector3.forward * speed * Time.deltaTime, Space.Self);
+            if (propeller != null)
+                propeller.Rotate(Vector3.up * 1000 * Time.deltaTime, Space.Self);
+        }
     }
 
-    void StartMove() {
+    void StartMove()
+    {
         moving = true;
         if (rollDelay >= 0) StartCoroutine(MyTimer.Start(rollDelay, false, Roll));
         if (loopDelay >= 0) StartCoroutine(MyTimer.Start(loopDelay, false, Loop));
     }
 
     void Roll()
-    {        
+    {
         if (animator != null && animator.GetCurrentAnimatorStateInfo(0).IsName("Idle"))
         {
-            animator.SetTrigger("Roll");            
+            animator.SetTrigger("Roll");
         }
     }
     void Loop()
     {
         if (animator != null && animator.GetCurrentAnimatorStateInfo(0).IsName("Idle"))
         {
-            animator.SetTrigger("Loop");            
+            animator.SetTrigger("Loop");
         }
     }
 }
