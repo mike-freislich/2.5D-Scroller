@@ -45,7 +45,6 @@ public class PowerUp : MonoBehaviour
     }
     
     void OnTriggerEnter(Collider other)
-    {
-        Debug.Log("PowerUp collided");
+    {        
     }
 }

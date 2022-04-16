@@ -8,13 +8,12 @@ enum GameLayer {
 }
 
 public class application : MonoBehaviour
-{
-    // Start is called before the first frame update
+{    
     void Start()
     {
-        Application.targetFrameRate = 30;
+        Application.targetFrameRate = 60;
         QualitySettings.vSyncCount = 1;
-        QualitySettings.SetQualityLevel((int)QualityLevel.Medium);
+        QualitySettings.SetQualityLevel((int)QualityLevel.High);
         
     }
 }

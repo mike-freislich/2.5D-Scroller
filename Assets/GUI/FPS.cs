@@ -28,6 +28,9 @@ public class FPS : MonoBehaviour
 
     void OnGUI()
     {
-        GUI.Label(new Rect(5, 15, 200, 50), label);
+        GUIStyle style = new GUIStyle();        
+        style.fontSize = 48;
+        style.fontStyle = FontStyle.Bold;         
+        GUI.Label(new Rect(5, 15, 400, 100), label, style);
     }
 }
