@@ -64,9 +64,12 @@ public class Spitfire : MonoBehaviour
 
     void Shoot()
     {
-        GameObject bulletGameObject = Instantiate<GameObject>(bullet);
-        BulletBase newBullet = bullet.GetComponent<BulletBase>();
-        bulletGameObject.transform.position = gun_left.position;        
-        if (newBullet != null) newBullet.speed = new Vector3(-20,0,0);
+        if (moving)
+        {
+            GameObject bulletGameObject = Instantiate<GameObject>(bullet);
+            BulletBase newBullet = bullet.GetComponent<BulletBase>();
+            bulletGameObject.transform.position = gun_left.position;
+            if (newBullet != null) newBullet.speed = new Vector3(-20, 0, 0);
+        }
     }
 }

@@ -5,21 +5,28 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     public int health;
-    public GameObject explosion;    
-    
+    public GameObject explosion;
+
 
     void Start()
-    {              
+    {
     }
 
     void Update()
-    {        
-    }    
-    
-    void OnBecameInvisible()
+    {
+        if (didScrollOffScreen())        
+            RemoveObject();        
+    }
+
+    void RemoveObject()
     {
         gameObject.SetActive(false);
         Destroy(gameObject);
+    }
+
+    void OnBecameInvisible()
+    {
+        RemoveObject();
     }
 
     public void TakeDamage(int amount)
@@ -32,7 +39,13 @@ public class Enemy : MonoBehaviour
     {
         GameObject explodeObject = Instantiate<GameObject>(explosion, transform.position, transform.rotation);
         Destroy(gameObject);
-        Destroy(explodeObject, 2);        
+        Destroy(explodeObject, 2);
+    }
+
+    bool didScrollOffScreen()
+    {
+        Vector3 screenPoint = Camera.main.WorldToScreenPoint(transform.position);
+        return (screenPoint.x < -0.25f);
     }
 
     public bool isOnCamera
@@ -44,7 +57,7 @@ public class Enemy : MonoBehaviour
             bool onScreen =
                 screenPoint.z > 0 &&
                 screenPoint.x > 0 && screenPoint.x < 1.1f &&
-                screenPoint.y > 0 && screenPoint.y < 1;            
+                screenPoint.y > 0 && screenPoint.y < 1;
             return onScreen;
         }
     }
