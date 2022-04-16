@@ -13,7 +13,7 @@ public class application : MonoBehaviour
     {
         Application.targetFrameRate = 60;
         QualitySettings.vSyncCount = 1;
-        QualitySettings.SetQualityLevel((int)QualityLevel.High);
+        QualitySettings.SetQualityLevel((int)QualityLevel.VeryLow);
         
     }
 }

@@ -23,35 +23,40 @@ public class Apache : MonoBehaviour
 
     Shooter shooter;
 
-    Transform groundLevel;  
+    Transform groundLevel;
     LayerMask layerMask;
+
+    Animator animator;
+
     void Start()
     {
         shooter = GetComponent<Shooter>();
-        layerMask = LayerMask.GetMask("Platforms");    
+        layerMask = LayerMask.GetMask("Platforms");
         rotors = transform.Find("Apache/main Rotor Housing/Main Rotors");
         tailRotors = transform.Find("Apache/tail rotor housing/tail rotor spindle");
-        groundLevel = GameObject.Find("GroundLevel").transform; 
+        groundLevel = GameObject.Find("GroundLevel").transform;
+        animator = GetComponent<Animator>();
     }
 
     void Update()
-    {   
+    {
         float inputX = Input.GetAxis("Horizontal");
         float inputY = Input.GetAxis("Vertical");
         bool fire1 = Input.GetButton("Fire1");
         bool fire2 = Input.GetButton("Fire2");
-        //bool dodge = Input.GetKeyDown(" ");
+        bool dodge = Input.GetButton("Jump"); ;
+
 
         AnimateRotors();
         if (fire1) CheckShoot();
         if (fire2) CheckBombDrop();
-        //if (dodge) CheckDodge();
+        if (dodge) CheckDodge();
 
-        float delta = Time.deltaTime;        
+        float delta = Time.deltaTime;
         transform.Translate(moveSpeed.x * inputX * delta, moveSpeed.y * inputY * delta, 0, Space.World);
-        transform.rotation =  Quaternion.Euler(0, 0, inputX * -3);
+        transform.rotation = Quaternion.Euler(0, 0, inputX * -3);
         CheckBounds();
-        
+
     }
 
     void CheckBounds()
@@ -62,15 +67,16 @@ public class Apache : MonoBehaviour
 
         if (screenPos.y < 0) screenPos.y = 0;
         else if (screenPos.y > 1) screenPos.y = 1;
-    
+
         transform.position = Camera.main.ViewportToWorldPoint(screenPos);
-        
-        Ray ray = new Ray(transform.position, Vector3.down);        
-        RaycastHit hit;        
-        if (Physics.Raycast(ray, out hit, 10f, layerMask)) {            
+
+        Ray ray = new Ray(transform.position, Vector3.down);
+        RaycastHit hit;
+        if (Physics.Raycast(ray, out hit, 10f, layerMask))
+        {
             float y = 1.4f - hit.distance;
             if (y > 0)
-                transform.Translate(new Vector3(0, y, 0));            
+                transform.Translate(new Vector3(0, y, 0));
         }
     }
 
@@ -86,51 +92,66 @@ public class Apache : MonoBehaviour
         if (bombTimer > fireSpeed)
         {
             bombTimer = 0;
-            bombSpawnPoint.Spawn();    
+            bombSpawnPoint.Spawn();
         }
     }
 
-    void CheckShoot() {
+    void CheckShoot()
+    {
         bulletTimer += Time.deltaTime;
-        if (bulletTimer > fireSpeed) {
+        if (bulletTimer > fireSpeed)
+        {
             bulletTimer = 0;
             frontSpawnPoint.Spawn();
         }
     }
 
-    void CheckDodge() {
+    void CheckDodge()
+    {
+        /*
         dodgeTimer += Time.deltaTime;
 
-        if (dodgeTimer < dodgeCycleTime) {            
-            transform.rotation =  Quaternion.Euler(360 * dodgeCycleTime * Time.deltaTime, 0, 0);
-        } else {
-            transform.rotation =  Quaternion.Euler(0, 0, 0);
+        if (dodgeTimer < dodgeCycleTime)
+        {
+            //transform.rotation =  Quaternion.Euler(360 * dodgeCycleTime * Time.deltaTime, 0, 0);
         }
+        else
+        {
+            dodgeTimer = 0;
+            //transform.rotation =  Quaternion.Euler(0, 0, 0);
+            if (animator != null)// && animator.GetCurrentAnimatorStateInfo(0).IsName("Idle"))
+            {
+                //animator.SetTrigger("jump");
+            }
+        }
+        */
     }
 
     void OnTriggerEnter(Collider other)
-    {   
+    {
         GameObject collidedWith = other.gameObject;
         Debug.Log($"Collision {collidedWith.layer}");
 
-        switch (collidedWith.layer) {
-            
+        switch (collidedWith.layer)
+        {
+
             // platform
             case 7: Debug.Log("platform crash!"); break;
-            
+
             // Collidable
-            case 10: 
+            case 10:
                 Debug.Log("POWER UP!");
 
                 // Power Up
                 PowerUp powerUp = collidedWith.GetComponent<PowerUp>();
-                if (powerUp != null) {
+                if (powerUp != null)
+                {
                     shooter.powerUp(powerUp.powerUpType);
-                    Destroy(collidedWith);                                        
+                    Destroy(collidedWith);
                 }
-                
-            break;
 
-        }     
+                break;
+
+        }
     }
 }
