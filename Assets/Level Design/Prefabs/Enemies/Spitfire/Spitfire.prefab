@@ -386,3 +386,5 @@ MonoBehaviour:
   speed: 5
   loopDelay: -1
   rollDelay: -1
+  fireRate: 1
+  bullet: {fileID: 5858132740365831927, guid: 59ebef3d56732423ba0b2e2c5e90efb2, type: 3}

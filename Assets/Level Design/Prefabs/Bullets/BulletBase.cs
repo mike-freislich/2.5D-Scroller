@@ -7,14 +7,17 @@ public class BulletBase : MonoBehaviour
     public GameObject explosion;
     public Vector3 positionOffset;
     public float explosionTimeout = 2.0f;
-    public int health = 50; 
+    public int health = 50;
+    public Vector3 speed;
     
     void Start()
     {
     }
 
     void Update()
-    {        
+    {     
+        if (speed != null)
+            transform.Translate(speed * Time.deltaTime);   
     }
 
     void OnTriggerEnter(Collider other)
