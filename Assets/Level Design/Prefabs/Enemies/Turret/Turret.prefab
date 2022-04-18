@@ -500,6 +500,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 250
   explosion: {fileID: 8715917605851035263, guid: 4e9e1f4304d424aa39b01cb97d02e8dc, type: 3}
+  score: 1000
 --- !u!95 &8888000574972996818
 Animator:
   serializedVersion: 3

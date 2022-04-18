@@ -23,12 +23,7 @@ public class Spitfire : MonoBehaviour
         gun_left = transform.Find("gun_left");
         gun_right = transform.Find("gun_right");
 
-        if (bullet != null)
-        {
-            //bullet.tag = "Enemy Bullet";  
-            //bullet.layer = 1;
-        }
-
+        if (bullet != null) bullet.tag = "enemy bullet";              
     }
 
     void Update()

@@ -1,21 +1,17 @@
 using UnityEngine;
 using System.Collections;
-using TMPro;
+using UnityEngine.UI;
 
 public class FPS : MonoBehaviour
 {
-
     string label = "";
     float count;
-
-    Canvas canvas;
-    TMP_Text fpsText;
+    
+    public Text FPSText;
     
 
     IEnumerator Start()
-    {
-        canvas = GameObject.Find("Canvas").GetComponent<Canvas>();
-        fpsText = canvas.transform.Find("txtFPS").gameObject.GetComponent<TMP_Text>();
+    {                
         
         GUI.depth = 2;
         while (true)
@@ -36,6 +32,6 @@ public class FPS : MonoBehaviour
 
     void OnGUI()
     {
-        fpsText.text = label;        
+        FPSText.text = label;        
     }
 }

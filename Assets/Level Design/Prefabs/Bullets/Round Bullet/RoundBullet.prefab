@@ -10,7 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1332331513566045291}
   - component: {fileID: 8642751849793929243}
-  m_Layer: 0
+  - component: {fileID: 9044109802256819578}
+  m_Layer: 9
   m_Name: RoundBullet
   m_TagString: enemy bullet
   m_Icon: {fileID: 0}
@@ -48,7 +49,21 @@ MonoBehaviour:
   positionOffset: {x: 0, y: 0, z: 0}
   explosionTimeout: 2
   health: 50
-  speed: {x: 0, y: 0, z: 0}
+  score: 50
+  speed: {x: -20, y: 0, z: 0}
+--- !u!65 &9044109802256819578
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5858132740365831927}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 12.510495}
+  m_Center: {x: 0, y: 0, z: 0.21479368}
 --- !u!1 &6646703534415399302
 GameObject:
   m_ObjectHideFlags: 0
@@ -60,8 +75,7 @@ GameObject:
   - component: {fileID: 3265497124706185230}
   - component: {fileID: 6307724382663483238}
   - component: {fileID: 2832628704996146091}
-  - component: {fileID: 433373819522243000}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -131,16 +145,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &433373819522243000
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6646703534415399302}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}

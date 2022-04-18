@@ -12,7 +12,7 @@ public class Turret : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         playerTransform = GameObject.Find("Player").transform;
-        playerSize = GameObject.Find("Player/Apache").GetComponent<MeshRenderer>().bounds.size;
+        playerSize = GameObject.Find("Player/mo").GetComponent<SkinnedMeshRenderer>().bounds.size;
     }
 
     void Update()

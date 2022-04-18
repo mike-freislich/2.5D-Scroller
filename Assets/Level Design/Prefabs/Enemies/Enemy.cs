@@ -6,10 +6,13 @@ public class Enemy : MonoBehaviour
 {
     public int health;
     public GameObject explosion;
+    public int score = 50;
 
+    TheGame theGame;
 
     void Start()
     {
+        theGame = TheGame.Instance;
     }
 
     void Update()
@@ -37,15 +40,17 @@ public class Enemy : MonoBehaviour
 
     void Explode()
     {
+        if (theGame != null)
+            theGame.AddScore(score);
         GameObject explodeObject = Instantiate<GameObject>(explosion, transform.position, transform.rotation);
         Destroy(gameObject);
-        Destroy(explodeObject, 2);
+        Destroy(explodeObject, 2);        
     }
 
     bool didScrollOffScreen()
     {
         Vector3 screenPoint = Camera.main.WorldToScreenPoint(transform.position);
-        return (screenPoint.x < -0.25f);
+        return (screenPoint.x < -0.5f);
     }
 
     public bool isOnCamera

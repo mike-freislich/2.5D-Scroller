@@ -8,10 +8,14 @@ public class BulletBase : MonoBehaviour
     public Vector3 positionOffset;
     public float explosionTimeout = 2.0f;
     public int health = 50;
+    public int score = 50;
     public Vector3 speed;
+
+    TheGame theGame;
 
     void Start()
     {
+        theGame = TheGame.Instance;
     }
 
     void Update()
@@ -30,6 +34,14 @@ public class BulletBase : MonoBehaviour
             switch (otherObject.tag)
             {
                 case "obstacle": Explode(); break;
+                case "Player":
+                    if (this.tag == "enemy bullet") Explode();                    
+                    break;
+                case "player bullet":
+                    if (this.tag == "enemy bullet") {
+                        theGame.AddScore(50);
+                    }
+                    break;
             }
         }
     }
@@ -62,7 +74,7 @@ public class BulletBase : MonoBehaviour
             Vector3 spawnPos = transform.position;
             Vector3 screenPoint = Camera.main.WorldToViewportPoint(spawnPos);
             bool onScreen =
-                screenPoint.z > 0 &&
+//                screenPoint.z > 0 &&
                 screenPoint.x > -0.1f && screenPoint.x < 1.1f &&
                 screenPoint.y > -0.1f && screenPoint.y < 1.1f;
             return onScreen;

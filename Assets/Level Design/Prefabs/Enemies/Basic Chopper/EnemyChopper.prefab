@@ -106,6 +106,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 50
   explosion: {fileID: 8715917605851035263, guid: 4e9e1f4304d424aa39b01cb97d02e8dc, type: 3}
+  score: 250
 --- !u!114 &-558371119987065486
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -3,9 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 enum QualityLevel { VeryLow, Low, Medium, High, VeryHigh, Ultra }
-enum GameLayer {
-    Default, TransparentFX, IgnoreRayCast, Water, UI, PlayerBullets, Platform, Player, Enemy
-}
+enum GameLayer {Default, TransparentFX, IgnoreRayCast, Water, UI, PlayerBullets, Platform, Player, Enemy}
 
 public class application : MonoBehaviour
 {    
@@ -14,6 +12,7 @@ public class application : MonoBehaviour
         Application.targetFrameRate = 60;
         QualitySettings.vSyncCount = 1;
         QualitySettings.SetQualityLevel((int)QualityLevel.VeryLow);
+        Time.timeScale = 1.0f;
         
     }
 }
