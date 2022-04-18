@@ -35,10 +35,11 @@ public class Bomb : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        switch (other.gameObject.layer)
+        switch (other.gameObject.tag)
         {
-            case 7: Explode(); break;
-            case 9:
+            case "obstacle": Explode(); break;
+            case "enemy":
+            case "enemy bullet":
                 Enemy enemy = getTopLevelEnemy(other.gameObject);
                 if (enemy != null) enemy.TakeDamage(damageAmount);
                 Explode();
