@@ -50,7 +50,7 @@ public class Enemy : MonoBehaviour
     bool didScrollOffScreen()
     {
         Vector3 screenPoint = Camera.main.WorldToScreenPoint(transform.position);
-        return (screenPoint.x < -0.5f);
+        return (screenPoint.x < -2f);
     }
 
     public bool isOnCamera
