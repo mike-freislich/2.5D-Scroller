@@ -2,63 +2,29 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
-public class PowerManager
-{
-    //float[]gunRate = {2.0f,3.5f,4.0f,4.5f,5.0f};
-    //float[]bombRate = {};
-
-    int gun, bomb, speed, laser;
-
-    PowerManager()
-    {
-    }
-
-    public void AddPowerUp(PowerUpType powerUp)
-    {
-        switch (powerUp)
-        {
-            case PowerUpType.Speed: speed = Mathf.Min(speed + 1, 4); break;
-            case PowerUpType.Bomb: bomb = Mathf.Min(bomb + 1, 4); break;
-            case PowerUpType.Fire: gun = Mathf.Min(gun + 1, 4); break;
-            case PowerUpType.Laser: laser = Mathf.Min(laser + 1, 1); break;
-        }
-    }
-
-    public float gunSpeed
-    {
-        get
-        {
-            return 0;
-        }
-    }
-
-}
-
 public class Apache : MonoBehaviour
 {
-    public GameObject bomb;
-    public GameObject bullet;
+    float[] speeds = { 0.7f, 0.85f, 1.0f, 1.1f, 1.3f };
+    float[] bombSpeeds = {5, 4, 3, 2, 1};
+    float[] gunSpeeds = {5, 4, 3, 2, 1};
     public TheGame theGame;
-    public SpawnPoint frontSpawnPoint;
-    public SpawnPoint bombSpawnPoint;
-    public Vector2 moveSpeed = new Vector2(5, 4);
+    public GameObject bomb, bullet;
+    public SpawnPoint frontSpawnPoint, bombSpawnPoint;
+    public Vector2 moveSpeed = new Vector2(6, 5);
+    public float dodgeCycleTime, fireSpeed = 0.5f;
+    public int bombPower, gunPower, speedPower;
+    public bool laser = false;
 
-    public float fireSpeed = 0.5f;
-    float bombTimer;
-    float bulletTimer;
-    public float dodgeCycleTime;
-    float dodgeTimer;
-
-    Shooter shooter;
+    float bombTimer, bulletTimer, dodgeTimer;
     LayerMask layerMask;
     Animator animator;
 
+
     void Start()
     {
-        shooter = GetComponent<Shooter>();
         layerMask = LayerMask.GetMask("Platforms");
         animator = GetComponent<Animator>();
+        theGame = GetComponent<TheGame>();
     }
 
     void Update()
@@ -73,8 +39,8 @@ public class Apache : MonoBehaviour
         if (fire2) CheckBombDrop();
         if (dodge) CheckDodge();
 
-        TranslateBounded(
-            new Vector3(moveSpeed.x * inputX * Time.deltaTime, moveSpeed.y * inputY * Time.deltaTime, 0));
+        Vector2 speed = moveSpeed * speeds[speedPower];
+        TranslateBounded(new Vector3(speed.x * inputX * Time.deltaTime, speed.y * inputY * Time.deltaTime, 0));
         TiltOnMove(inputX);
     }
 
@@ -84,13 +50,13 @@ public class Apache : MonoBehaviour
     }
 
     void TranslateBounded(Vector3 translateBy)
-    { 
+    {
         // Keep Player on Screen     
         Vector3 screenPos = Camera.main.WorldToViewportPoint(transform.position + translateBy);
         if ((screenPos.x < 0 && translateBy.x < 0) || (screenPos.x > 1 && translateBy.x > 0)) translateBy.x = 0;
         if ((screenPos.y < 0 && translateBy.y < 0) || (screenPos.y > 0.92f && translateBy.y > 0)) translateBy.y = 0;
         transform.Translate(translateBy, Space.World);
-        
+
         // Keep Player above Platforms
         Vector3 offset = Vector3.up * 1.4f;
         Ray ray = new Ray(transform.position + offset, Vector3.down);
@@ -103,10 +69,21 @@ public class Apache : MonoBehaviour
         }
     }
 
+    void AddPowerUp(PowerUpType powerUp)
+    {
+        switch (powerUp)
+        {
+            case PowerUpType.Speed: speedPower++; speedPower = Mathf.Min(speedPower, 4); break;
+            case PowerUpType.Bomb: bombPower++; bombPower = Mathf.Min(bombPower, 4); break;
+            case PowerUpType.Gun: gunPower++; gunPower = Mathf.Min(gunPower, 4); break;
+            case PowerUpType.Laser: laser = true; break;
+        }
+    }
+
     void CheckBombDrop()
     {
         bombTimer += Time.deltaTime;
-        if (bombTimer > fireSpeed)
+        if (bombTimer > fireSpeed * bombSpeeds[bombPower])
         {
             bombTimer = 0;
             bombSpawnPoint.Spawn();
@@ -116,7 +93,7 @@ public class Apache : MonoBehaviour
     void CheckShoot()
     {
         bulletTimer += Time.deltaTime;
-        if (bulletTimer > fireSpeed)
+        if (bulletTimer > fireSpeed * gunSpeeds[gunPower])
         {
             bulletTimer = 0;
             frontSpawnPoint.Spawn();
@@ -146,7 +123,7 @@ public class Apache : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        GameObject collidedWith = other.gameObject;        
+        GameObject collidedWith = other.gameObject;
 
         switch (collidedWith.tag)
         {
@@ -158,18 +135,16 @@ public class Apache : MonoBehaviour
 
             case "pickup":
                 PowerUp powerUp = collidedWith.GetComponent<PowerUp>();
-                if (powerUp != null)
-                {
-                    shooter.powerUp(powerUp.powerUpType);
-                    Destroy(collidedWith);
-                }
+                if (powerUp != null) AddPowerUp(powerUp.powerUpType);
+                Destroy(collidedWith);
                 break;
         }
     }
 
+
+
     void Death(string reason)
     {
-        GetComponent<TheGame>().PlayerDied(reason);        
-        //Debug.Log($"DEATH :::: You were killed by {reason} ");
+        theGame.PlayerDied(reason);
     }
 }

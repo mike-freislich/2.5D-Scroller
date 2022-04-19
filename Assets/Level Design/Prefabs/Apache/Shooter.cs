@@ -16,7 +16,7 @@ public class Shooter : MonoBehaviour
     {
         switch (powerUpType) {
             case PowerUpType.Bomb: break;
-            case PowerUpType.Fire: break;
+            case PowerUpType.Gun: break;
             case PowerUpType.Speed: break;
             case PowerUpType.Laser: break;            
         }        

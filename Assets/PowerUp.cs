@@ -1,9 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEditor;
 
-public enum PowerUpType { Speed, Bomb, Fire, Laser };
+public enum PowerUpType { Speed, Bomb, Gun, Laser };
 public enum Power { Low, Medium, High, VeryHigh, Super };
 
 public class PowerUp : MonoBehaviour
@@ -16,7 +15,7 @@ public class PowerUp : MonoBehaviour
         switch (powerUpType)
         {
             case PowerUpType.Speed: ChangeColor(new Color(0.2f, 0.2f, 1, 0.4f)); break;
-            case PowerUpType.Fire: ChangeColor(new Color(1, 0, 0, 0.4f)); break;
+            case PowerUpType.Gun: ChangeColor(new Color(1, 0, 0, 0.4f)); break;
             case PowerUpType.Bomb: ChangeColor(new Color(0, 1, 0, 0.4f)); break;
             case PowerUpType.Laser: ChangeColor(new Color(1, 1, 1, 0.4f)); break;
         }
