@@ -14,10 +14,10 @@ public class PowerUp : MonoBehaviour
     {
         switch (powerUpType)
         {
-            case PowerUpType.Speed: ChangeColor(new Color(0.2f, 0.2f, 1, 0.4f)); break;
-            case PowerUpType.Gun: ChangeColor(new Color(1, 0, 0, 0.4f)); break;
-            case PowerUpType.Bomb: ChangeColor(new Color(0, 1, 0, 0.4f)); break;
-            case PowerUpType.Laser: ChangeColor(new Color(1, 1, 1, 0.4f)); break;
+            case PowerUpType.Speed: ChangeColor(new Color(0.2f, 0.2f, 1, 0.6f)); break;
+            case PowerUpType.Gun: ChangeColor(new Color(1, 0, 0, 0.6f)); break;
+            case PowerUpType.Bomb: ChangeColor(new Color(0, 1, 0, 0.6f)); break;
+            case PowerUpType.Laser: ChangeColor(new Color(1, 1, 1, 0.6f)); break;
         }
     }
 
