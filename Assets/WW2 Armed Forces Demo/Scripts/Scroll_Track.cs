@@ -5,7 +5,7 @@ using UnityEngine;
 public class Scroll_Track : MonoBehaviour {
 
     [SerializeField]
-    private float scrollSpeed = 0.05f;
+    public float scrollSpeed = 0.05f;
 
     private float offset = 0.0f;
     private Renderer r;

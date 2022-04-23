@@ -7,6 +7,7 @@ public class Enemy : MonoBehaviour
     public int health;
     public GameObject explosion;
     public int score = 50;
+    public bool offScreenCulling = true;
 
     TheGame theGame;
 
@@ -17,19 +18,20 @@ public class Enemy : MonoBehaviour
 
     void Update()
     {
-        if (didScrollOffScreen())        
+        if (didScrollOffScreen() && offScreenCulling)        
             RemoveObject();        
     }
 
     void RemoveObject()
-    {
+    {        
         gameObject.SetActive(false);
         Destroy(gameObject);
     }
 
     void OnBecameInvisible()
     {
-        RemoveObject();
+        if (offScreenCulling)
+            RemoveObject();
     }
 
     public void TakeDamage(int amount)
@@ -50,13 +52,15 @@ public class Enemy : MonoBehaviour
     bool didScrollOffScreen()
     {
         Vector3 screenPoint = Camera.main.WorldToScreenPoint(transform.position);
-        return (screenPoint.x < -2f);
+        return (screenPoint.x < -2f);        
     }
 
     public bool isOnCamera
     {
         get
         {
+            return ScreenUtility.isOnCamera(transform);            
+            /*
             Vector3 spawnPos = transform.position;
             Vector3 screenPoint = Camera.main.WorldToViewportPoint(spawnPos);
             bool onScreen =
@@ -64,6 +68,7 @@ public class Enemy : MonoBehaviour
                 screenPoint.x > 0 && screenPoint.x < 1.1f &&
                 screenPoint.y > 0 && screenPoint.y < 1;
             return onScreen;
+            */
         }
     }
 }
