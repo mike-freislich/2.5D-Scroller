@@ -12,37 +12,39 @@ public class Bullet : MonoBehaviour
 
     void Start()
     {
-
+        StartCoroutine(MyTimer.Start(0.25f, true, () => { if (!isOnCamera) RemoveObject(); }));
     }
 
     void Update()
     {
-        
+
     }
 
-    void FixedUpdate() {
+    void FixedUpdate()
+    {
         transform.Translate(Vector3.right * speed * Time.fixedDeltaTime, Space.World);
     }
 
     void OnTriggerEnter(Collider other)
     {
-        switch (other.gameObject.tag) {
-            case "obstacle": Explode(); break; 
-            
+        switch (other.gameObject.tag)
+        {
+            case "obstacle": Explode(); break;
+
             case "enemy":
             case "enemy bullet":
                 Explode();
                 Enemy enemy = getTopLevelEnemy(other.gameObject);
                 if (enemy != null) enemy.TakeDamage(damageAmount);
-                break; 
+                break;
         }
     }
 
     Enemy getTopLevelEnemy(GameObject hitObject)
     {
-        Enemy enemy = hitObject.GetComponent<Enemy>();        
+        Enemy enemy = hitObject.GetComponent<Enemy>();
         if (enemy == null)
-            enemy = hitObject.GetComponentInParent<Enemy>();        
+            enemy = hitObject.GetComponentInParent<Enemy>();
         return enemy;
     }
 
@@ -50,13 +52,22 @@ public class Bullet : MonoBehaviour
     {
         GameObject explodeObject = Instantiate<GameObject>(explosion, transform.position, transform.rotation);
         Destroy(gameObject);
-        Destroy(explodeObject, 2);
+        Destroy(explodeObject, 1);
     }
 
     void OnBecameInvisible()
     {
         Destroy(gameObject);
     }
+
+    bool isOnCamera { get { return ScreenUtility.isOnCamera(transform); } }
+
+    void RemoveObject()
+    {
+        gameObject.SetActive(false);
+        Destroy(gameObject);
+    }
+
 
 
 }
