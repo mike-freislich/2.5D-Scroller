@@ -1754,7 +1754,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -434.8001, y: 336}
+  m_AnchoredPosition: {x: -434.80014, y: 336}
   m_SizeDelta: {x: -893.47, y: -681.92}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &290471036
@@ -5132,7 +5132,7 @@ Camera:
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_RenderingPath: 1
+  m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
   m_TargetEye: 3
@@ -8010,7 +8010,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -532.93, y: -345.38}
+  m_AnchoredPosition: {x: -532.93005, y: -345.38}
   m_SizeDelta: {x: -1084.2, y: -690.77}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1434058188

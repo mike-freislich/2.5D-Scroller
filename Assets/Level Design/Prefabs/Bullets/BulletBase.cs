@@ -28,24 +28,68 @@ public class BulletBase : MonoBehaviour
     {
         GameObject otherObject = other.gameObject;
         if (otherObject != null)
+            HitObject(otherObject);
+    }
+
+
+    private void HitObject(GameObject hitObject)
+    {
+        switch (hitObject.tag)
         {
-            switch (otherObject.tag)
-            {
-                case "obstacle": Explode(); break;
-                case "Player":
-                    if (this.tag == "enemy bullet") Explode();
-                    break;
-                case "player bullet":
-                    if (this.tag == "enemy bullet")
+            case "obstacle":
+                Explode();
+                break;
+
+            case "Player":
+                if (this.tag == "enemy bullet")
+                    Explode();
+                break;
+
+
+            case "enemy":
+                if (this.tag == "player bullet") {
+                    getTopLevelEnemy(hitObject)?.TakeDamage(health);   
+                    Explode();
+                }                
+                break;
+
+
+            case "enemy bullet":
+                if (this.tag == "player bullet")
+                {
+                    BulletBase enemyBullet = hitObject.GetComponent<BulletBase>();
+                    if (enemyBullet != null)
                     {
-                        theGame.AddScore(50);
+                        int enemyBulletHealthBeforeHit = enemyBullet.health;
+
+                        // take health from enemy bullet                        
+                        enemyBullet.health -= this.health;
+                        if (enemyBullet.health <= 0)
+                        {
+                            theGame.AddScore(enemyBullet.score);
+                            enemyBullet.Explode();
+                        }
+
+                        // take health from player bullet
+                        this.health -= enemyBulletHealthBeforeHit;
+                        if (this.health <= 0)
+                            Explode();
                     }
-                    break;
-            }
+                }
+                break;
         }
     }
 
- 
+
+    Enemy getTopLevelEnemy(GameObject hitObject)
+    {
+        Enemy enemy = hitObject.GetComponent<Enemy>();
+        if (enemy == null)
+            enemy = hitObject.GetComponentInParent<Enemy>();
+        return enemy;
+    }
+
+
     void Explode()
     {
         if (explosion != null)
@@ -58,10 +102,10 @@ public class BulletBase : MonoBehaviour
 
     void OnBecameInvisible()
     {
-        RemoveObject();        
+        RemoveObject();
     }
 
-    bool isOnCamera { get { return ScreenUtility.isOnCamera(transform); }}
+    bool isOnCamera { get { return ScreenUtility.isOnCamera(transform); } }
 
     void RemoveObject()
     {
