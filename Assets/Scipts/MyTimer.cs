@@ -34,10 +34,7 @@ using UnityEngine;
       do
       {
         yield return new WaitForSeconds(duration);
-
-        if (callback != null)
-          callback();
-
+        if (callback != null) callback();
       } while (repeat);
     }
 

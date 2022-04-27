@@ -16,14 +16,12 @@ public class BulletBase : MonoBehaviour
     void Start()
     {
         theGame = TheGame.Instance;
+        StartCoroutine(MyTimer.Start(0.25f, true, () => { if (!isOnCamera) RemoveObject(); }));
     }
 
     void Update()
     {
-        if (speed != null)
-            transform.Translate(speed * Time.deltaTime);
-
-        if (!isOnCamera) RemoveObject();
+        transform.Translate(speed * Time.deltaTime);
     }
 
     void OnTriggerEnter(Collider other)
@@ -35,10 +33,11 @@ public class BulletBase : MonoBehaviour
             {
                 case "obstacle": Explode(); break;
                 case "Player":
-                    if (this.tag == "enemy bullet") Explode();                    
+                    if (this.tag == "enemy bullet") Explode();
                     break;
                 case "player bullet":
-                    if (this.tag == "enemy bullet") {
+                    if (this.tag == "enemy bullet")
+                    {
                         theGame.AddScore(50);
                     }
                     break;
@@ -46,12 +45,7 @@ public class BulletBase : MonoBehaviour
         }
     }
 
-    void RemoveObject()
-    {
-        gameObject.SetActive(false);
-        Destroy(gameObject);
-    }
-
+ 
     void Explode()
     {
         if (explosion != null)
@@ -64,20 +58,15 @@ public class BulletBase : MonoBehaviour
 
     void OnBecameInvisible()
     {
+        RemoveObject();        
+    }
+
+    bool isOnCamera { get { return ScreenUtility.isOnCamera(transform); }}
+
+    void RemoveObject()
+    {
+        gameObject.SetActive(false);
         Destroy(gameObject);
     }
 
-    bool isOnCamera
-    {
-        get
-        {
-            Vector3 spawnPos = transform.position;
-            Vector3 screenPoint = Camera.main.WorldToViewportPoint(spawnPos);
-            bool onScreen =
-//                screenPoint.z > 0 &&
-                screenPoint.x > -0.1f && screenPoint.x < 1.1f &&
-                screenPoint.y > -0.1f && screenPoint.y < 1.1f;
-            return onScreen;
-        }
-    }
 }

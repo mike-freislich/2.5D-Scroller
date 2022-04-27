@@ -115,6 +115,7 @@ MonoBehaviour:
   health: 100
   explosion: {fileID: 2392344449861076881, guid: 099d5b63d7ae14b53802b32e52e567d2, type: 3}
   score: 100
+  offScreenCulling: 1
 --- !u!1 &2023023351880829102
 GameObject:
   m_ObjectHideFlags: 0
@@ -126,7 +127,6 @@ GameObject:
   - component: {fileID: 566951722785019579}
   - component: {fileID: 3755704572251439237}
   - component: {fileID: 2335895636542319028}
-  - component: {fileID: 7750382187584761389}
   m_Layer: 9
   m_Name: rear (1)
   m_TagString: Untagged
@@ -197,19 +197,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &7750382187584761389
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2023023351880829102}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Size: {x: 1.0000004, y: 1.0000005, z: 1}
-  m_Center: {x: 0.0000019073495, y: -0.000003814699, z: 0}
 --- !u!1 &4430225593900980679
 GameObject:
   m_ObjectHideFlags: 0
@@ -221,7 +208,6 @@ GameObject:
   - component: {fileID: 8414117443591106732}
   - component: {fileID: 8360604452722613290}
   - component: {fileID: 8880936753583258575}
-  - component: {fileID: 7800249828807745138}
   m_Layer: 9
   m_Name: rear
   m_TagString: Untagged
@@ -292,19 +278,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &7800249828807745138
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4430225593900980679}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Size: {x: 1.0000004, y: 1.0000005, z: 1}
-  m_Center: {x: 0.0000019073495, y: -0.000003814699, z: 0}
 --- !u!1 &6283375325049475480
 GameObject:
   m_ObjectHideFlags: 0
@@ -316,7 +289,6 @@ GameObject:
   - component: {fileID: 206434840363991028}
   - component: {fileID: 3906217554001430300}
   - component: {fileID: 616027642914615202}
-  - component: {fileID: 4059186793118234984}
   m_Layer: 9
   m_Name: rear (2)
   m_TagString: Untagged
@@ -387,16 +359,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &4059186793118234984
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6283375325049475480}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Size: {x: 1.0000004, y: 1.0000005, z: 1}
-  m_Center: {x: 0.0000019073495, y: -0.000003814699, z: 0}

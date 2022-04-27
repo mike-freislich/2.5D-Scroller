@@ -16,13 +16,10 @@ public class BossTank : MonoBehaviour
 
     BossState bossState = BossState.idle;
     float shootSpeed;
-    float shootTimer;
     float travelled;
     Vector3 direction;
     Scroll_Track trackLeft, trackRight;
     Vector3 startPoint, endPoint;
-
-
 
     void Start()
     {
@@ -34,33 +31,35 @@ public class BossTank : MonoBehaviour
 
         startPoint = transform.position;
         endPoint = startPoint + direction * distance;
-        StartShootTimer();
     }
 
     void Update()
     {
         switch (bossState)
         {
-            case BossState.idle:
-                if (ScreenUtility.isOnCamera(transform)) bossState = BossState.active;
-                break;
-
-            case BossState.active:
-                shootTimer += Time.deltaTime;
-                if (shootTimer > shootSpeed) Shoot();
-                Move();
-                break;
+            case BossState.idle : if (ScreenUtility.isOnCamera(transform)) ActivateAI(); break;
+            case BossState.active: Move(); break;
         }
+    }
+
+    void ActivateAI()
+    {
+        bossState = BossState.active;
+        Shoot();
     }
 
     void Shoot()
     {
-        foreach(GameObject spawnPoint in spawnPoints) {
+        foreach (GameObject spawnPoint in spawnPoints)
+        {
             Transform t = spawnPoint.transform;
             NewBullet(t);
         }
-
-        StartShootTimer();
+            
+        if (bossState == BossState.active) {            
+            shootSpeed = Random.Range(shootSpeedMin, shootSpeedMax);
+            StartCoroutine(MyTimer.Start(shootSpeed, Shoot));
+        }
     }
 
     void NewBullet(Transform t)
@@ -69,12 +68,13 @@ public class BossTank : MonoBehaviour
         BulletBase bb = newBullet.GetComponent<BulletBase>();
         bb.transform.position = t.position;
         bb.transform.rotation = t.rotation;
-        bb.speed = Vector3.forward * bulletSpeed;        
+        bb.speed = Vector3.forward * bulletSpeed;
     }
 
     void Move()
     {
         travelled += moveSpeed * direction.x * Time.deltaTime;
+
         if (direction.x > 0 && travelled > distance) ChangeDirection(distance);
         else if (direction.x < 0 && travelled < 0) ChangeDirection(0);
 
@@ -87,11 +87,5 @@ public class BossTank : MonoBehaviour
         direction.x *= -1;
         trackLeft.scrollSpeed = moveSpeed * 0.01f * direction.x;
         trackRight.scrollSpeed = moveSpeed * 0.01f * direction.x;
-    }
-
-    void StartShootTimer()
-    {
-        shootTimer = 0;
-        shootSpeed = Random.Range(shootSpeedMin, shootSpeedMax);
     }
 }

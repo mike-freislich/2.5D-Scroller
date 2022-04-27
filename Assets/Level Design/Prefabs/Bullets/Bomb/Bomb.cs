@@ -59,7 +59,7 @@ public class Bomb : MonoBehaviour
     {
         GameObject explodeObject = Instantiate<GameObject>(explosion, transform.position, transform.rotation);
         Destroy(gameObject);
-        Destroy(explodeObject, 2);
+        Destroy(explodeObject, 1);
     }
 
 }
