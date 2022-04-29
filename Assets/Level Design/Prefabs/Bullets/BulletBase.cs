@@ -9,19 +9,54 @@ public class BulletBase : MonoBehaviour
     public float explosionTimeout = 2.0f;
     public int health = 50;
     public int score = 50;
-    public Vector3 speed;
+    public Vector3 speed;    
+    public float accelerationDelay;
+    public float acceleration;
+    public Vector3 rigidBodyInertia;
 
     TheGame theGame;
+    private bool accelerating;
+    private float currentSpeed;
 
     void Start()
     {
-        theGame = TheGame.Instance;
+        theGame = TheGame.Instance;        
+
+        if (accelerationDelay > 0)
+            StartCoroutine(MyTimer.Start(accelerationDelay, () => { accelerating = true; }));
+
         StartCoroutine(MyTimer.Start(0.25f, true, () => { if (!isOnCamera) RemoveObject(); }));
+        SetInertia();
+    }
+
+    void SetInertia()
+    {
+        if (rigidBodyInertia != null)
+        {
+            Rigidbody rb = GetComponent<Rigidbody>();
+            if (rb != null) rb.velocity = rigidBodyInertia;
+        }
     }
 
     void Update()
     {
-        transform.Translate(speed * Time.deltaTime);
+
+    }
+
+    void FixedUpdate()
+    {
+        if (accelerationDelay > 0)
+        {
+            if (accelerating)
+            {
+                currentSpeed = Mathf.Min(currentSpeed + acceleration * Time.fixedDeltaTime, speed.x);                
+                transform.Translate(Vector3.right * currentSpeed, Space.World);
+            }
+        }
+        else
+        {
+            transform.Translate(speed * Time.fixedDeltaTime);
+        }
     }
 
     void OnTriggerEnter(Collider other)
@@ -47,10 +82,11 @@ public class BulletBase : MonoBehaviour
 
 
             case "enemy":
-                if (this.tag == "player bullet") {
-                    getTopLevelEnemy(hitObject)?.TakeDamage(health);   
+                if (this.tag == "player bullet")
+                {
+                    getTopLevelEnemy(hitObject)?.TakeDamage(health);
                     Explode();
-                }                
+                }
                 break;
 
 

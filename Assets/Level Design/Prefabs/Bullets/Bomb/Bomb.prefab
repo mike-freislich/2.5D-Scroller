@@ -12,11 +12,11 @@ GameObject:
   - component: {fileID: 5375242830856961941}
   - component: {fileID: 5375242830856961930}
   - component: {fileID: 5375242830856961928}
-  - component: {fileID: 6372624399883235097}
+  - component: {fileID: 198583361683380756}
   - component: {fileID: 2504952727079136315}
   m_Layer: 6
   m_Name: Bomb
-  m_TagString: Untagged
+  m_TagString: player bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5375242830856961929}
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 298.30377, y: 3.8644814, z: -27.269989}
+  m_LocalPosition: {x: 301.56345, y: 10.967065, z: -27.269989}
   m_LocalScale: {x: 0.20919602, y: 0.2515373, z: 0.20919602}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -102,7 +102,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &6372624399883235097
+--- !u!114 &198583361683380756
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -111,13 +111,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 5375242830856961929}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3eb4e6ae0e4cb45d59deca54d6e3fb7c, type: 3}
+  m_Script: {fileID: 11500000, guid: 287c21a657bc44e61b3fcd5eaf1a3614, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   explosion: {fileID: 2392344449861076881, guid: 099d5b63d7ae14b53802b32e52e567d2, type: 3}
+  positionOffset: {x: 0, y: 0, z: 0}
+  explosionTimeout: 2
+  health: 100
+  score: 100
+  speed: {x: 4, y: 0, z: 0}
   accelerationDelay: 0.5
   acceleration: 0.4
-  maxVelocity: 4
+  rigidBodyInertia: {x: 3, y: -2, z: 0}
 --- !u!65 &2504952727079136315
 BoxCollider:
   m_ObjectHideFlags: 0

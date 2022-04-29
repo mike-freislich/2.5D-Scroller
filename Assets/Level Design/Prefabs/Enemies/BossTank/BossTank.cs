@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-enum BossState { idle, active, dying, dead };
+
 
 public class BossTank : MonoBehaviour
 {
@@ -14,37 +14,51 @@ public class BossTank : MonoBehaviour
     public float shootSpeedMin;
     public float shootSpeedMax;
 
-    BossState bossState = BossState.idle;
+    Boss boss;
     float shootSpeed;
     float travelled;
-    Vector3 direction;
+    Vector3 moveDirection;
     Scroll_Track trackLeft, trackRight;
     Vector3 startPoint, endPoint;
 
     void Start()
     {
+        InitialiseBoss();
+        StartVectors();
+        SetupTankTracks();
+    }
+
+    void InitialiseBoss()
+    {
+        boss = gameObject.GetComponent<Boss>();
+        boss.OnEnteredCameraView = ActivateAI;
+        boss.OnMove = Move;
+        boss.timeRemaining = 30;
+    }
+
+    void StartVectors()
+    {
+        moveDirection = Vector3.right;
+        startPoint = transform.position;
+        endPoint = startPoint + moveDirection * distance;
+    }
+
+    void SetupTankTracks()
+    {
         trackLeft = transform.Find("Chi_Ha_Track_L").gameObject.GetComponent<Scroll_Track>();
         trackRight = transform.Find("Chi_Ha_Track_R").gameObject.GetComponent<Scroll_Track>();
         trackLeft.scrollSpeed = 0;
         trackRight.scrollSpeed = 0;
-        direction = Vector3.right;
-
-        startPoint = transform.position;
-        endPoint = startPoint + direction * distance;
     }
 
     void Update()
     {
-        switch (bossState)
-        {
-            case BossState.idle : if (ScreenUtility.isOnCamera(transform)) ActivateAI(); break;
-            case BossState.active: Move(); break;
-        }
+
     }
 
     void ActivateAI()
     {
-        bossState = BossState.active;
+        boss.bossState = BossState.active;
         Shoot();
     }
 
@@ -55,8 +69,9 @@ public class BossTank : MonoBehaviour
             Transform t = spawnPoint.transform;
             NewBullet(t);
         }
-            
-        if (bossState == BossState.active) {            
+
+        if (boss.bossState == BossState.active)
+        {
             shootSpeed = Random.Range(shootSpeedMin, shootSpeedMax);
             StartCoroutine(MyTimer.Start(shootSpeed, Shoot));
         }
@@ -73,19 +88,19 @@ public class BossTank : MonoBehaviour
 
     void Move()
     {
-        travelled += moveSpeed * direction.x * Time.deltaTime;
+        travelled += moveSpeed * moveDirection.x * Time.deltaTime;
 
-        if (direction.x > 0 && travelled > distance) ChangeDirection(distance);
-        else if (direction.x < 0 && travelled < 0) ChangeDirection(0);
+        if (moveDirection.x > 0 && travelled > distance) ChangeDirection(distance);
+        else if (moveDirection.x < 0 && travelled < 0) ChangeDirection(0);
 
-        transform.position = startPoint + Vector3.right * travelled;
+        transform.position = startPoint + Vector3.right * travelled;        
     }
 
     void ChangeDirection(float distance)
     {
         travelled = distance;
-        direction.x *= -1;
-        trackLeft.scrollSpeed = moveSpeed * 0.01f * direction.x;
-        trackRight.scrollSpeed = moveSpeed * 0.01f * direction.x;
+        moveDirection.x *= -1;
+        trackLeft.scrollSpeed = moveSpeed * 0.01f * moveDirection.x;
+        trackRight.scrollSpeed = moveSpeed * 0.01f * moveDirection.x;
     }
 }

@@ -53,6 +53,9 @@ MonoBehaviour:
   health: 50
   score: 50
   speed: {x: -20, y: 0, z: 0}
+  accelerationDelay: 0
+  acceleration: 0
+  rigidBodyInertia: {x: 0, y: 0, z: 0}
 --- !u!65 &9044109802256819578
 BoxCollider:
   m_ObjectHideFlags: 0

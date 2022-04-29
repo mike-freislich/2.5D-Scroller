@@ -19,7 +19,6 @@ public class Apache : MonoBehaviour
     LayerMask layerMask;
     Animator animator;
 
-
     void Start()
     {
         layerMask = LayerMask.GetMask("Platforms");
@@ -36,8 +35,7 @@ public class Apache : MonoBehaviour
         bool dodge = Input.GetButton("Jump"); ;
 
         if (fire1) CheckShoot();
-        if (fire2) CheckBombDrop();
-        if (dodge) CheckDodge();
+        if (fire2) CheckBombDrop();        
 
         Vector2 speed = moveSpeed * speeds[speedPower];
         TranslateBounded(new Vector3(speed.x * inputX * Time.deltaTime, speed.y * inputY * Time.deltaTime, 0));
@@ -100,27 +98,6 @@ public class Apache : MonoBehaviour
         }
     }
 
-    void CheckDodge()
-    {
-        /*
-        dodgeTimer += Time.deltaTime;
-
-        if (dodgeTimer < dodgeCycleTime)
-        {
-            //transform.rotation =  Quaternion.Euler(360 * dodgeCycleTime * Time.deltaTime, 0, 0);
-        }
-        else
-        {
-            dodgeTimer = 0;
-            //transform.rotation =  Quaternion.Euler(0, 0, 0);
-            if (animator != null)// && animator.GetCurrentAnimatorStateInfo(0).IsName("Idle"))
-            {
-                //animator.SetTrigger("jump");
-            }
-        }
-        */
-    }
-
     void OnTriggerEnter(Collider other)
     {
         GameObject collidedWith = other.gameObject;
@@ -140,8 +117,6 @@ public class Apache : MonoBehaviour
                 break;
         }
     }
-
-
 
     void Death(string reason)
     {

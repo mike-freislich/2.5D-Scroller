@@ -14,8 +14,13 @@ public class Enemy : MonoBehaviour
 
     private EnemyState state;
 
+    private int maxHealth;
+
+    public int GetMaxHealth { get { return maxHealth; } }
+
     void Start()
     {
+        maxHealth = health;
         state = EnemyState.active;
 
         theGame = TheGame.Instance;
