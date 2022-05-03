@@ -15,28 +15,30 @@ public class TheGame : MonoBehaviour
     public Text livesText;
     public Text deathText;
     public Text bossTimerText;
-    public Text bossHealthPercentage;
- 
+    public GameObject progressBarObject;   
+    
+    ProgressBar progressBar;
 
+    private static TheGame instance;
     public static TheGame Instance
     {
         get
         {
-            return GameObject.Find("Player").GetComponent<TheGame>();
+            if (instance == null)
+                instance = GameObject.Find("Player").GetComponent<TheGame>();                
+            return instance;
         }
     }
 
     void Start()
     {
+        progressBar = progressBarObject.GetComponent<ProgressBar>();
         lives = 3;
         HideBossHealth();
-        HideBossTimer();
+        HideBossTimer();        
     }
 
-    void Update()
-    {
-
-    }
+    void Update() { }
 
     public void PlayerDied(string reason)
     {
@@ -68,22 +70,27 @@ public class TheGame : MonoBehaviour
 
     public void DisplayBossTimer(int secondsRemaining)
     {
-        bossTimerText.text = $"{secondsRemaining} left";
+        bossTimerText.text = $"{secondsRemaining}";
     }
 
     public void HideBossTimer()
     {
-        bossTimerText.text = "";
+        bossTimerText.text = "";        
     }
 
     public void DisplayBossHealth(float percent)
-    {        
-        bossHealthPercentage.text = "".PadRight(Mathf.RoundToInt(percent * 10), '*'); ;
+    {       
+        if (progressBar != null)
+        { 
+            progressBar.Show();
+            progressBar.SetValue(percent);
+        }
     }
 
     public void HideBossHealth()
     {
-        bossHealthPercentage.text = "";
+        if (progressBar != null)
+            progressBar.Hide();         
     }
 
 }

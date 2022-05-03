@@ -5,8 +5,8 @@ using UnityEngine;
 public class Apache : MonoBehaviour
 {
     float[] speeds = { 0.7f, 0.85f, 1.0f, 1.1f, 1.3f };
-    float[] bombSpeeds = {5, 4, 3, 2, 1};
-    float[] gunSpeeds = {5, 4, 3, 2, 1};
+    float[] bombSpeeds = { 5, 4, 3, 2, 1 };
+    float[] gunSpeeds = { 5, 4, 3, 2, 1 };
     public TheGame theGame;
     public GameObject bomb, bullet;
     public SpawnPoint frontSpawnPoint, bombSpawnPoint;
@@ -28,18 +28,30 @@ public class Apache : MonoBehaviour
 
     void Update()
     {
+        //MonitorButtons();
         float inputX = Input.GetAxis("Horizontal");
         float inputY = Input.GetAxis("Vertical");
         bool fire1 = Input.GetButton("Fire1");
         bool fire2 = Input.GetButton("Fire2");
-        bool dodge = Input.GetButton("Jump"); ;
+        //bool dodge = Input.GetButton("Jump");
 
         if (fire1) CheckShoot();
-        if (fire2) CheckBombDrop();        
+        if (fire2) CheckBombDrop();
 
         Vector2 speed = moveSpeed * speeds[speedPower];
         TranslateBounded(new Vector3(speed.x * inputX * Time.deltaTime, speed.y * inputY * Time.deltaTime, 0));
         TiltOnMove(inputX);
+    }
+
+    void MonitorButtons()
+    {
+        for (int i = 0; i < 20; i++)
+        {
+            if (Input.GetKeyDown("joystick 1 button " + i))
+            {
+                print("joystick 1 button " + i);
+            }
+        }
     }
 
     void TiltOnMove(float amount)

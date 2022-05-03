@@ -12,7 +12,7 @@ public class Boss : MonoBehaviour
     public OnEnteredCameraViewDelegate OnEnteredCameraView;
     public delegate void OnMoveDelegate();
     public OnMoveDelegate OnMove;
-    
+
     TheGame theGame;
     Enemy enemy;
 
@@ -20,7 +20,7 @@ public class Boss : MonoBehaviour
     {
         bossState = BossState.idle;
         theGame = TheGame.Instance;
-        enemy = gameObject.GetComponent<Enemy>();                    
+        enemy = gameObject.GetComponent<Enemy>();
     }
 
     void Update()
@@ -56,16 +56,27 @@ public class Boss : MonoBehaviour
         theGame.DisplayBossHealth(currentHealth / maxHealth);
     }
 
+    void OnDestroy()
+    {
+        HideBossGUI();
+    }
+
+    void HideBossGUI()
+    {
+        theGame.HideBossTimer();
+        theGame.HideBossHealth();
+    }
+
     void TimeIsUp()
     {
-        bossState = BossState.dying;   
-        theGame.HideBossTimer();
+        bossState = BossState.dying;
+        HideBossGUI();
         // Lose a life and return to last checkpoint
     }
 
     void ActivateBoss()
     {
-        bossState = BossState.active;        
+        bossState = BossState.active;
         OnEnteredCameraView();
     }
 }
